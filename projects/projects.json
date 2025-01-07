@@ -1,0 +1,143 @@
+[
+  {
+    "name": "Jungle Odyssey",
+    "desc": "Adventure, showcasing Amazon rainforest exploration with features like navigation, event highlights, and tour information.",
+    "image": "amazon",
+    "category": "basicweb",
+    "links": {
+      "view": "404.html",
+      "code": "https://github.com/Rohit-Dogra/Restaurant_SIte"
+    }
+  },
+  {
+    "name": "Another Portfolio ",
+    "desc": "compilation of academic and professional materials that exemplifies your beliefs, skills, qualification, education and experiences.",
+    "image": "port",
+    "category": "basicweb",
+    "links": {
+      "view": "404.html",
+      "code": "https://github.com/Rohit-Dogra/My_Portfolio"
+    }
+  },
+  {
+    "name": "Pet-Site template",
+    "desc": "We understand that pets are more than companions, they are family members who deserve love, attention, and a safe environment.",
+    "image": "petai",
+    "category": "basicweb",
+    "links": {
+      "view": "https://petpatch.nicepage.io/",
+      "code": "#"
+    }
+  },
+  {
+    "name": "University Website Template",
+    "desc": " is a comprehensive and user-friendly design that highlights essential information like academics, admissions, campus life, and contact details.",
+    "image": "uni",
+    "category": "basicweb",
+    "links": {
+      "view": "404.html",
+      "code": "https://github.com/Rohit-Dogra/University_Website_Template"
+    }
+  },
+  {
+    "name": "Restaurant-Template",
+    "desc": "It featuring a modern layout with navigation links to explore the menu, make reservations, and contact the team. ",
+    "image": "res",
+    "category": "basicweb",
+    "links": {
+      "view": "404.html",
+      "code": "https://github.com/Rohit-Dogra/Restaurant_Template"
+    }
+  },
+  {
+    "name": "Cover-letter for Friend",
+    "desc": "This letter is built with heart and a dash of brilliance, just like a conversation with your best friend",
+    "image": "cov",
+    "category": "basicweb",
+    "links": {
+      "view": "404.html",
+      "code": "#"
+    }
+  },
+ 
+  {
+    "name": "Heart-Slide Template",
+    "desc": "This letter is built with heart and a dash of brilliance, just like a conversation with your loved ones",
+    "image": "heart",
+    "category": "basicweb",
+    "links": {
+      "view": "404.html",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Hotel-Website-Template",
+    "desc": " is designed to offer a seamless and luxurious user experience,features like elegant room, amenities and booking. With dedicated section for services, dining and contact info.",
+    "image": "hot",
+    "category": "basicweb",
+    "links": {
+      "view": "404.html",
+      "code": "#"
+    }
+  },
+  {
+    "name": " Langauge Port",
+    "desc": "This personal portfolio website template showcases your skills and expertise in web development or other professional fields, with sections for showcasing project",
+    "image": "lan",
+    "category": "basicweb",
+    "links": {
+      "view": "404.html",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Will-you-my-buddy",
+    "desc": " Is a platform dedicated to fostering meaningful connections and friendships through engaging activities and events.",
+    "image": "will",
+    "category": "basicweb",
+    "links": {
+      "view": "404.html",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Indian Temples",
+    "desc": "It shows temples of different sectors of India. as user clicks it will redirect to wiki of that temple for info.",
+    "image": "tem",
+    "category": "basicweb",
+    "links": {
+      "view": "404.html",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Recipe-Wizard",
+    "desc": "Native android app built using Java, XML. Retrofit & Glide dependencies. Provides different category news.",
+    "image": "rec",
+    "category": "android",
+    "links": {
+      "view": "404.html",
+      "code": "https://github.com/Rohit-Dogra/Recipe-Wizard"
+    }
+  },
+  {
+    "name": "Sports management System",
+    "desc": "Web-based application designed to streamline the organization and administration of sports activities and events.",
+    "image": "sports",
+    "category": "android",
+    "links": {
+      "view": "404.html",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Pet-Care",
+    "desc": "The Pet Patch  is a dedicated platform designed to provide reliable and comprehensive pet care services",
+    "image": "pet",
+    "category": "android",
+    "links": {
+      "view": "404.html",
+      "code": "#"
+    }
+  }
+]
