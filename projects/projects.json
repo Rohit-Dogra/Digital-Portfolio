@@ -1,12 +1,72 @@
 [
-  {
+      {
+    "name": "Expertise-Station",
+    "desc": "Expertise Station is a dynamic platform that connects users with top industry experts across domains like Business Strategy, HR, Operations, and more through personalized sessions and real-time networking.",
+    "image": "expertise",
+    "category": "basicweb",
+    "links": {
+      "view": "https://www.expertisestation.com/",
+      "code": "404.html"
+    }
+  },
+ {
     "name": "Jungle Odyssey",
     "desc": "Adventure, showcasing Amazon rainforest exploration with features like navigation, event highlights, and tour information.",
     "image": "amazon",
     "category": "basicweb",
     "links": {
+      "view": "https://amazon-travel.netlify.app/",
+      "code": "https://github.com/Rohit-Dogra/Jungle-Template"
+    }
+  },
+  {
+    "name": "Road-Detection-System-main",
+    "desc": "Road safety concerns have led to smart systems that make driving safer and easier.",
+    "image": "lane",
+    "category": "basicweb",
+    "links": {
       "view": "404.html",
-      "code": "https://github.com/Rohit-Dogra/Restaurant_SIte"
+      "code": "https://github.com/Rohit-Dogra/Road-Detection-System-main"
+    }
+  },
+  {
+    "name": "Travel-Ease",
+    "desc": "A comprehensive travel website offering booking, emergency support, and all-in-one travel management features.",
+    "image": "travel",
+    "category": "mern stack",
+    "links": {
+      "view": "https://kzmgyheqt6ea8pa5ps24.lite.vusercontent.net/",
+      "code": "https://github.com/Rohit-Dogra/Travel-MERN-"
+    }
+  },
+  {
+    "name": "Bulb Control Project",
+    "desc": "This project is a React-based web application that controls bulbs remotely. It uses Material-UI for the UI, WebSockets for real-time updates, and Node.js as the backend.",
+    "image": "switch",
+    "category": "mern stack",
+    "links": {
+      "view": "404.html",
+      "code": "https://github.com/Rohit-Dogra/Smart-Bulb-Control"
+    }
+  },
+  {
+    "name": "Expense-Management-System",
+    "desc": "The Expense Management System is a web-based application designed to assist users in tracking and managing their daily expenses.To create a scalable, responsive, and user-friendly application.",
+    "image": "expense",
+    "category": "mern stack",
+    "links": {
+      "view": "https://expense-tracker-app-three-beryl.vercel.app/",
+      "code": "https://github.com/Rohit-Dogra/Expense-Management-System-using-MERN-Stack"
+    }
+  },
+  {
+    "name": "Netflix-Clone",
+    "desc": "React Native App with the same style as Netflix for iOS. I released a serie of videos on Youtube with a walkthrough explaining every part of this application.",
+    "image": "netflix",
+    "category": "mern stack",
+    "links": {
+      "view": "404.html",
+      "code": "https://github.com/Rohit-Dogra/React-Native-Netflix"
     }
   },
   {
@@ -15,11 +75,12 @@
     "image": "port",
     "category": "basicweb",
     "links": {
-      "view": "404.html",
-      "code": "https://github.com/Rohit-Dogra/My_Portfolio"
+      "view": "https://full-stack-portfolio-rotu.netlify.app/",
+      "code": "https://github.com/Rohit-Dogra/responsive-portfolio"
     }
   },
-  {
+ 
+ {
     "name": "Pet-Site template",
     "desc": "We understand that pets are more than companions, they are family members who deserve love, attention, and a safe environment.",
     "image": "petai",
@@ -30,13 +91,23 @@
     }
   },
   {
+    "name": "Pet-Patch",
+    "desc": "We understand that pets are more than companions, they are family members who deserve love, attention, and a safe environment.",
+    "image": "Petpatch",
+    "category": "basicweb",
+    "links": {
+      "view": "https://pet-patch.netlify.app/",
+      "code": "https://github.com/Rohit-Dogra/Pet-care-Website"
+    }
+  },
+  {
     "name": "University Website Template",
     "desc": " is a comprehensive and user-friendly design that highlights essential information like academics, admissions, campus life, and contact details.",
     "image": "uni",
     "category": "basicweb",
     "links": {
-      "view": "404.html",
-      "code": "https://github.com/Rohit-Dogra/University_Website_Template"
+      "view": "https://university-templates.netlify.app/",
+      "code": "https://github.com/Rohit-Dogra/university-template"
     }
   },
   {
@@ -55,8 +126,8 @@
     "image": "cov",
     "category": "basicweb",
     "links": {
-      "view": "404.html",
-      "code": "#"
+      "view": "https://cover-letterss.netlify.app/",
+      "code": "https://github.com/Rohit-Dogra/Cover-letter2.0"
     }
   },
  
@@ -77,7 +148,7 @@
     "category": "basicweb",
     "links": {
       "view": "404.html",
-      "code": "#"
+      "code": "https://github.com/Rohit-Dogra/Hotel-website"
     }
   },
   {
@@ -86,8 +157,8 @@
     "image": "lan",
     "category": "basicweb",
     "links": {
-      "view": "404.html",
-      "code": "#"
+      "view": "https://full-stack-portfolio-rotu.netlify.app/",
+      "code": "https://github.com/Rohit-Dogra/responsive-portfolio"
     }
   },
   {
@@ -97,7 +168,7 @@
     "category": "basicweb",
     "links": {
       "view": "404.html",
-      "code": "#"
+      "code": "https://github.com/Rohit-Dogra/will-you-be-my-buddy"
     }
   },
   {
@@ -127,7 +198,7 @@
     "category": "android",
     "links": {
       "view": "404.html",
-      "code": "#"
+      "code": "https://github.com/Rohit-Dogra/sports-management-system--App"
     }
   },
   {
