@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16161a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f7f6f3" media="(prefers-color-scheme: light)">
+<title>Analytics Dashboard — Case study | Rohit Dogra</title>
+<meta name="description" content="A unified reporting surface for Amazon sellers and agencies — sales, inventory, returns and advertising pulled from a dozen connected platforms into one readable view.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Analytics Dashboard — Case study | Rohit Dogra">
+<meta property="og:description" content="A unified reporting surface for Amazon sellers and agencies — sales, inventory, returns and advertising pulled from a dozen connected platforms into one readable view.">
+<script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);}catch(e){}})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css?v=1.1.1">
+<link id="favicon" rel="icon" href="/assets/images/favhand.png" type="image/png">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <symbol id="i-arrow-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+  <symbol id="i-arrow-ur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 7 8.2 5.6a1.5 1.5 0 0 0 1.6 0L21 7"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.7a10.3 10.3 0 0 0-3.26 20.07c.51.1.7-.22.7-.5v-1.9c-2.86.63-3.47-1.22-3.47-1.22-.47-1.2-1.15-1.52-1.15-1.52-.94-.64.07-.63.07-.63 1.04.08 1.58 1.07 1.58 1.07.92 1.58 2.42 1.13 3.01.86.1-.67.36-1.13.66-1.39-2.28-.26-4.68-1.14-4.68-5.09 0-1.12.4-2.04 1.06-2.76-.11-.26-.46-1.31.1-2.72 0 0 .86-.28 2.83 1.05a9.8 9.8 0 0 1 5.16 0c1.96-1.33 2.82-1.05 2.82-1.05.56 1.41.21 2.46.11 2.72.66.72 1.06 1.64 1.06 2.76 0 3.96-2.41 4.82-4.7 5.08.37.32.7.95.7 1.92v2.85c0 .28.19.61.71.5A10.3 10.3 0 0 0 12 1.7Z"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5.5a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM3.2 8.98h3.5V21H3.2V8.98Zm5.7 0h3.36v1.64h.05c.47-.85 1.6-1.75 3.3-1.75 3.53 0 4.18 2.24 4.18 5.16V21h-3.5v-5.35c0-1.28-.02-2.92-1.85-2.92-1.85 0-2.13 1.39-2.13 2.83V21H8.9V8.98Z"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.9h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94Z"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2.5H7A2.5 2.5 0 0 0 4.5 5v14A2.5 2.5 0 0 0 7 21.5h10a2.5 2.5 0 0 0 2.5-2.5V8l-5.5-5.5Z"/><path d="M14 2.5V8h5.5M8.5 13h7M8.5 17h5"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2.5 11 13M21.5 2.5l-6.7 19-3.8-8.5L2.5 9.2l19-6.7Z"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9.2"/><path d="M12 7.5v5.2M12 16.3h.01"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.6A8.6 8.6 0 1 1 9.4 3.5a6.9 6.9 0 0 0 11.1 11.1Z"/></symbol>
+</svg>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="ambient" aria-hidden="true"><div class="ambient__grid"></div><div class="ambient__glow ambient__glow--a"></div><div class="ambient__noise"></div></div>
+
+<header class="nav is-stuck" id="nav">
+  <div class="nav__inner">
+    <a href="/" class="brand" aria-label="Rohit Dogra — home"><span class="brand__mark" aria-hidden="true">RD</span><span>Rohit Dogra<span class="brand__sub"> / Case study</span></span></a>
+    <nav aria-label="Primary">
+      <ul class="nav__links">
+        <li><a href="/#work">Work</a></li><li><a href="/#about">About</a></li>
+        <li><a href="/#skills">Expertise</a></li><li><a href="/#experience">Experience</a></li>
+        <li><a href="/#education">Education</a></li><li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav__cta">
+      <button class="nav__theme" id="themeToggle" type="button" aria-label="Switch to light theme">
+        <svg class="i-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        <svg class="i-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+      </button>
+      <a href="/#contact" class="btn btn--primary btn--sm">Let's talk <svg aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+      <button class="nav__burger" id="burger" type="button" aria-expanded="false" aria-controls="navSheet" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="nav__sheet" id="navSheet" inert>
+  <ul class="nav__sheet-links">
+    <li><a href="/#work"><span class="num">01</span> Work</a></li>
+    <li><a href="/#about"><span class="num">02</span> About</a></li>
+    <li><a href="/#skills"><span class="num">03</span> Expertise</a></li>
+    <li><a href="/#experience"><span class="num">04</span> Experience</a></li>
+    <li><a href="/#education"><span class="num">05</span> Education</a></li>
+    <li><a href="/#contact"><span class="num">06</span> Contact</a></li>
+  </ul>
+  <div class="nav__sheet-foot"><a href="mailto:dogra.rohit2002@gmail.com" class="link-arrow link-arrow--accent">dogra.rohit2002@gmail.com</a></div>
+</div>
+
+<main id="main">
+
+<section class="cs-head">
+  <div class="shell">
+    <a href="/#work" class="backlink"><svg aria-hidden="true"><use href="#i-arrow-l"/></svg> All selected work</a>
+
+    <p class="sec-eyebrow"><span class="idx">02</span> Case study &mdash; SaaS · Analytics · Dashboard</p>
+
+    <h1 class="cs-title">Analytics Dashboard</h1>
+    <p class="cs-tagline">A unified reporting surface for Amazon sellers and agencies — sales, inventory, returns and advertising pulled from a dozen connected platforms into one readable view.</p>
+
+    <div class="cs-actions">
+      <a href="https://dashboard.growithamazon.com/" class="btn btn--primary" target="_blank" rel="noopener">Visit live site <svg aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+      <a href="#overview" class="btn btn--ghost">Read the breakdown <svg aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="shell">
+  <div class="frame cs-frame" data-reveal="scale">
+    <div class="frame__bar"><span class="frame__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="frame__url">dashboard.growithamazon.com</span></div>
+    <div class="frame__screen">
+      <svg viewBox="0 0 800 500" role="img" aria-label="Interface mockup of an analytics dashboard with a sidebar, KPI cards, a revenue trend line and a channel breakdown chart">
+                <rect width="800" height="500" fill="#0a0b0d"/>
+                <rect width="176" height="500" fill="#0e1014"/><path d="M176.5 0v500" stroke="#1c1f26"/>
+                <circle cx="30" cy="30" r="7" fill="#efb749"/><rect x="44" y="26" width="64" height="8" rx="4" fill="#363c47"/>
+                <rect x="16" y="66" width="144" height="30" rx="7" fill="#191c22"/><rect x="30" y="77" width="12" height="8" rx="2" fill="#efb749"/><rect x="52" y="77" width="66" height="8" rx="4" fill="#454c58"/>
+                <g><rect x="30" y="115" width="12" height="8" rx="2" fill="#2b3038"/><rect x="52" y="115" width="80" height="8" rx="4" fill="#2b3038"/>
+                   <rect x="30" y="147" width="12" height="8" rx="2" fill="#2b3038"/><rect x="52" y="147" width="58" height="8" rx="4" fill="#2b3038"/>
+                   <rect x="30" y="179" width="12" height="8" rx="2" fill="#2b3038"/><rect x="52" y="179" width="72" height="8" rx="4" fill="#2b3038"/>
+                   <rect x="30" y="211" width="12" height="8" rx="2" fill="#2b3038"/><rect x="52" y="211" width="50" height="8" rx="4" fill="#2b3038"/>
+                   <rect x="30" y="243" width="12" height="8" rx="2" fill="#2b3038"/><rect x="52" y="243" width="86" height="8" rx="4" fill="#2b3038"/></g>
+                <rect x="16" y="418" width="144" height="60" rx="9" fill="#131720" stroke="#232833"/><rect x="32" y="434" width="60" height="7" rx="3.5" fill="#efb749" opacity=".7"/><rect x="32" y="450" width="100" height="6" rx="3" fill="#22262d"/>
+                <path d="M176 54.5h624" stroke="#1c1f26"/>
+                <rect x="204" y="22" width="120" height="10" rx="5" fill="#454c58"/><rect x="204" y="38" width="76" height="6" rx="3" fill="#22262d"/>
+                <rect x="620" y="18" width="76" height="22" rx="11" fill="#191c22" stroke="#232833"/><rect x="706" y="18" width="68" height="22" rx="11" fill="#efb749" opacity=".9"/>
+                <g class="mk-fade mk-fade--1" fill="#101318" stroke="#1e2128">
+                  <rect x="204" y="78" width="182" height="86" rx="10"/><rect x="404" y="78" width="182" height="86" rx="10"/><rect x="604" y="78" width="170" height="86" rx="10"/>
+                </g>
+                <g class="mk-fade mk-fade--1">
+                  <g fill="#2b3038"><rect x="222" y="96" width="56" height="6" rx="3"/><rect x="422" y="96" width="48" height="6" rx="3"/><rect x="622" y="96" width="62" height="6" rx="3"/></g>
+                  <g fill="#e9edf3"><rect x="222" y="112" width="82" height="16" rx="4"/><rect x="422" y="112" width="66" height="16" rx="4"/><rect x="622" y="112" width="74" height="16" rx="4"/></g>
+                  <g fill="#6ee7a8" opacity=".85"><rect x="222" y="140" width="40" height="8" rx="4"/><rect x="422" y="140" width="34" height="8" rx="4"/></g>
+                  <rect x="622" y="140" width="44" height="8" rx="4" fill="#ff7a6b" opacity=".75"/>
+                </g>
+                <rect x="204" y="186" width="382" height="196" rx="10" fill="#101318" stroke="#1e2128"/>
+                <rect x="224" y="206" width="90" height="7" rx="3.5" fill="#454c58"/><rect x="224" y="220" width="58" height="6" rx="3" fill="#22262d"/>
+                <g stroke="#181c22"><path d="M224 350h342M224 314h342M224 278h342M224 242h342"/></g>
+                <path class="mk-line" d="M228 330 274 300 320 312 366 268 412 286 458 236 504 252 550 214" fill="none" stroke="#efb749" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path class="mk-line" d="M228 344 274 336 320 342 366 320 412 330 458 306 504 316 550 296" fill="none" stroke="#3d5aff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
+                <g class="mk-fade mk-fade--3" fill="#22262d"><rect x="228" y="362" width="26" height="6" rx="3"/><rect x="292" y="362" width="26" height="6" rx="3"/><rect x="356" y="362" width="26" height="6" rx="3"/><rect x="420" y="362" width="26" height="6" rx="3"/><rect x="484" y="362" width="26" height="6" rx="3"/><rect x="540" y="362" width="26" height="6" rx="3"/></g>
+                <rect x="604" y="186" width="170" height="196" rx="10" fill="#101318" stroke="#1e2128"/>
+                <rect x="622" y="206" width="72" height="7" rx="3.5" fill="#454c58"/>
+                <g fill="#efb749" opacity=".8">
+                  <rect class="mk-bar" x="624" y="290" width="18" height="60" rx="3"/>
+                  <rect class="mk-bar" x="652" y="266" width="18" height="84" rx="3"/>
+                  <rect class="mk-bar" x="680" y="302" width="18" height="48" rx="3"/>
+                  <rect class="mk-bar" x="708" y="242" width="18" height="108" rx="3"/>
+                  <rect class="mk-bar" x="736" y="278" width="18" height="72" rx="3"/>
+                </g>
+                <path d="M620 350.5h136" stroke="#1e2128"/>
+                <g class="mk-fade mk-fade--4" fill="#22262d"><rect x="622" y="364" width="112" height="6" rx="3"/></g>
+                <g class="mk-fade mk-fade--4">
+                  <rect x="204" y="404" width="570" height="74" rx="10" fill="#101318" stroke="#1e2128"/>
+                  <g fill="#2b3038"><rect x="224" y="422" width="70" height="6" rx="3"/><rect x="360" y="422" width="52" height="6" rx="3"/><rect x="500" y="422" width="60" height="6" rx="3"/><rect x="640" y="422" width="44" height="6" rx="3"/></g>
+                  <path d="M212 440.5h554" stroke="#181c22"/>
+                  <g fill="#363c47"><rect x="224" y="452" width="96" height="7" rx="3.5"/><rect x="360" y="452" width="64" height="7" rx="3.5"/><rect x="500" y="452" width="78" height="7" rx="3.5"/></g>
+                  <rect x="640" y="450" width="52" height="11" rx="5.5" fill="#6ee7a8" opacity=".5"/>
+                </g>
+              </svg>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="overview">
+  <div class="shell">
+    <dl class="cs-facts" data-reveal>
+      <div><dt>Role</dt><dd>Frontend engineering &amp; data-interface design</dd></div>
+      <div><dt>Scope</dt><dd>Product UI · Data visualisation</dd></div>
+      <div><dt>Period</dt><dd>2025 — 2026</dd></div>
+      <div><dt>Live at</dt><dd><a href="https://dashboard.growithamazon.com/" target="_blank" rel="noopener">dashboard.growithamazon.com <svg aria-hidden="true" style="width:12px;height:12px;vertical-align:-1px"><use href="#i-arrow-ur"/></svg></a></dd></div>
+    </dl>
+
+    <p class="cs-contribution" data-reveal>Designed the KPI, trend and drill-down patterns that make multi-marketplace data legible at a glance.</p>
+
+    <div class="cs-body">
+        <section class="cs-block">
+          <div class="cs-block__label"><span class="n">01</span> Problem</div>
+          <div class="cs-block__body">
+          <p>Sellers were reading their own business across a dozen disconnected consoles — Seller Central, Vendor Central, Amazon Advertising, Google Ads, Noon and more. Every question about performance began with an export and ended in a spreadsheet.</p>
+          <p>By the time a number was assembled by hand it was already stale, so decisions were being made on last week&#x27;s picture.</p>
+          </div>
+        </section>
+        <section class="cs-block">
+          <div class="cs-block__label"><span class="n">02</span> Approach</div>
+          <div class="cs-block__body">
+            <ul>
+            <li>Started from the questions, not the data: what does an operator need to know in the first five seconds of opening this?</li>
+            <li>Built a strict hierarchy — headline KPIs, then trend, then breakdown, then row-level detail — so every module reads the same way and the eye learns the pattern once.</li>
+            <li>Chose chart types by the shape of the question: trend to line, comparison to bar, composition to stacked. Never decoration.</li>
+            <li>Designed the loading and empty states first, because a data product spends real time in both.</li>
+            <li>Used tabular figures and locale-aware formatting so columns of numbers stay aligned and scannable.</li>
+            </ul>
+          </div>
+        </section>
+        <section class="cs-block">
+          <div class="cs-block__label"><span class="n">03</span> Solution</div>
+          <div class="cs-block__body">
+          <p>A modular dashboard covering revenue analytics, inventory intelligence, returns analysis and advertising performance, with role-based workspaces separating multi-brand operators from agency accounts.</p>
+          <p>Reserved chart space and consistent number formatting keep the layout stable as data streams in, so nothing jumps while you&#x27;re reading it.</p>
+          </div>
+        </section>
+        <section class="cs-block">
+          <div class="cs-block__label"><span class="n">04</span> Impact</div>
+          <div class="cs-block__body">
+            <ul>
+            <li>Performance questions that used to mean cross-referencing several consoles now resolve on one screen.</li>
+            <li>The module pattern absorbs new data sources without a redesign each time one is connected.</li>
+            <li>Reporting shifted from manual exports to a live, shareable surface.</li>
+            </ul>
+          </div>
+        </section>
+    </div>
+
+    <div class="cs-stack" data-reveal>
+      <span class="mono">Tech stack</span>
+      <ul class="chip-row"><li class="chip">Next.js</li><li class="chip">React</li><li class="chip">TypeScript</li><li class="chip">REST APIs</li><li class="chip">Charting</li><li class="chip">Role-based UI</li><li class="chip">Design tokens</li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="shell">
+    <nav class="cs-pager" aria-label="Other case studies">
+      <a class="cs-pager__link cs-pager__link--prev" href="/projects/growithamazon/">
+        <span class="mono">Previous</span>
+        <span class="cs-pager__title">GrowithAmazon</span>
+        <span class="cs-pager__cat">E-commerce · SaaS Platform</span>
+      </a>
+      <a class="cs-pager__link cs-pager__link--next" href="/projects/workflowhub/">
+        <span class="mono">Next</span>
+        <span class="cs-pager__title">WorkflowHub</span>
+        <span class="cs-pager__cat">SaaS · Productivity · Workflow</span>
+      </a>
+    </nav>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="shell">
+    <div class="cs-cta" data-reveal>
+      <h2>Building something like this?</h2>
+      <p>Tell me what you're working on and where it's stuck.</p>
+      <div class="cs-cta__row">
+        <a href="/#contact" class="btn btn--accent">Start a conversation <svg aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+        <a href="/projects" class="btn btn--ghost">Browse the archive <svg aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__bar">
+      <p>&copy; <span id="year">2026</span> Rohit Dogra &mdash; All rights reserved</p>
+      <a href="/" class="link-arrow">Back to portfolio <svg aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<a href="#main" class="totop" id="toTop" aria-label="Back to top"><svg aria-hidden="true"><use href="#i-arrow-up"/></svg></a>
+<script src="/assets/js/script.js?v=1.1.1" defer></script>
+</body>
+</html>

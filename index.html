@@ -1,367 +1,1021 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Rohit Dogra, portfolio, Rohit, full stack dev, personal portfolio lifecodes, portfolio design, portfolio website, personal portfolio" />
-    <meta name="description" content="Welcome to Rohit's Portfolio. Full-Stack Web Developer and Android App Developer" />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Favicon -->
-    <link id='favicon' rel="shortcut icon" href="./assets/images/cmsoon.png" type="image/x-png">
-    <title>Portfolio | Rohit Dogra</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16161a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f7f6f3" media="(prefers-color-scheme: light)">
+<title>Rohit Dogra — Frontend Engineer &amp; UI/UX Designer</title>
+<meta name="description" content="Rohit Dogra designs and builds digital products — SaaS dashboards, internal platforms and e-commerce experiences — with production-ready frontend engineering and considered UX.">
+<meta name="keywords" content="Rohit Dogra, frontend engineer, UI UX designer, React developer, Next.js, SaaS dashboard, portfolio, product designer, India">
+<meta name="author" content="Rohit Dogra">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rohit Dogra — Frontend Engineer &amp; UI/UX Designer">
+<meta property="og:description" content="I design and build products that look sharp, work smart, and scale — SaaS dashboards, internal platforms and e-commerce.">
+<meta property="og:image" content="/assets/images/Profile-912.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);}catch(e){}})()</script>
+<link rel="stylesheet" href="/assets/css/style.css?v=1.1.1">
+<link id="favicon" rel="icon" href="/assets/images/favhand.png" type="image/png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Rohit Dogra",
+  "jobTitle": "Frontend Engineer & UI/UX Designer",
+  "email": "mailto:dogra.rohit2002@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Gurugram", "addressRegion": "Haryana", "addressCountry": "IN" },
+  "sameAs": [
+    "https://www.linkedin.com/in/rohit-dogra-96973b240/",
+    "https://github.com/Rohit-Dogra"
+  ]
+}
+</script>
 </head>
-<body oncontextmenu="return false">
+<body>
 
-<!-- navbar starts -->
-<header>
-        <a href="/" class="logo"><i class="fab fa-slack"></i> <b>Rohit-Dogra</a>
+<a class="skip-link" href="#main">Skip to content</a>
 
-        <div id="menu" class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-            <li><a class="active" href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-</header>
-<!-- navbar ends -->
+<!-- ── Icon sprite ─────────────────────────────────────────────────────── -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <symbol id="i-arrow-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+  <symbol id="i-arrow-ur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 7 8.2 5.6a1.5 1.5 0 0 0 1.6 0L21 7"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.7a10.3 10.3 0 0 0-3.26 20.07c.51.1.7-.22.7-.5v-1.9c-2.86.63-3.47-1.22-3.47-1.22-.47-1.2-1.15-1.52-1.15-1.52-.94-.64.07-.63.07-.63 1.04.08 1.58 1.07 1.58 1.07.92 1.58 2.42 1.13 3.01.86.1-.67.36-1.13.66-1.39-2.28-.26-4.68-1.14-4.68-5.09 0-1.12.4-2.04 1.06-2.76-.11-.26-.46-1.31.1-2.72 0 0 .86-.28 2.83 1.05a9.8 9.8 0 0 1 5.16 0c1.96-1.33 2.82-1.05 2.82-1.05.56 1.41.21 2.46.11 2.72.66.72 1.06 1.64 1.06 2.76 0 3.96-2.41 4.82-4.7 5.08.37.32.7.95.7 1.92v2.85c0 .28.19.61.71.5A10.3 10.3 0 0 0 12 1.7Z"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5.5a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM3.2 8.98h3.5V21H3.2V8.98Zm5.7 0h3.36v1.64h.05c.47-.85 1.6-1.75 3.3-1.75 3.53 0 4.18 2.24 4.18 5.16V21h-3.5v-5.35c0-1.28-.02-2.92-1.85-2.92-1.85 0-2.13 1.39-2.13 2.83V21H8.9V8.98Z"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.9h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94Z"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2.5H7A2.5 2.5 0 0 0 4.5 5v14A2.5 2.5 0 0 0 7 21.5h10a2.5 2.5 0 0 0 2.5-2.5V8l-5.5-5.5Z"/><path d="M14 2.5V8h5.5M8.5 13h7M8.5 17h5"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2.5 11 13M21.5 2.5l-6.7 19-3.8-8.5L2.5 9.2l19-6.7Z"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9.2"/><path d="M12 7.5v5.2M12 16.3h.01"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.6A8.6 8.6 0 1 1 9.4 3.5a6.9 6.9 0 0 0 11.1 11.1Z"/></symbol>
+</svg>
 
+<div class="progress" id="progress" aria-hidden="true"></div>
 
-<!-- hero section starts -->
-<section class="home" id="home">
-    <div id="particles-js"></div>
+<div class="ambient" aria-hidden="true">
+  <div class="ambient__grid"></div>
+  <div class="ambient__glow ambient__glow--a"></div>
+  <div class="ambient__glow ambient__glow--b"></div>
+  <div class="ambient__noise"></div>
+</div>
 
-    <div class="content">
-    <h2>Hi There,<br/> I'm Rohit <span>Dogra</span></h2>
-    <p>i am into <span class="typing-text"></span></p><!--this locate on js- then script.js inside-->
-    <a href="#about" class="btn"><span>About Me</span>
-      <i class="fas fa-arrow-circle-down"></i>
+<!-- ── Navigation ──────────────────────────────────────────────────────── -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#home" class="brand" aria-label="Rohit Dogra — home">
+      <span class="brand__mark" aria-hidden="true">RD</span>
+      <span>Rohit Dogra<span class="brand__sub"> / Portfolio</span></span>
     </a>
-    <div class="socials">
-        <ul class="social-icons">
-          <li><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/rohit-dogra-96973b240/" target="_blank"><i class="fab fa-linkedin"></i></a></li> 
-          <li><a class="github" aria-label="GitHub" href="https://github.com/Rohit-Dogra" target="_blank"><i class="fab fa-github"></i></a></li>
-          <li><a class="Facebook" aria-label="Facebook" href="https://www.facebook.com/rohit.dogra.79827?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a></li>
-          <li><a class="Email" aria-label="Email" href="mailto:dogra.rohit2002@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a></li>
-          <li><a class="instagram" aria-label="Instagram" href="https://www.instagram.com/rohit_singh_dogra/profilecard/?igsh=NDVhM2U2MDBrMWI2 "><i class="fab fa-instagram" target="_blank"></i></a></li>
-          
+
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navLinks">
+        <span class="nav__pill" aria-hidden="true"></span>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Expertise</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav__cta">
+      <button class="nav__theme" id="themeToggle" type="button" aria-label="Switch to light theme">
+        <svg class="i-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        <svg class="i-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+      </button>
+      <a href="#contact" class="btn btn--primary btn--sm">Let's talk <svg aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+      <button class="nav__burger" id="burger" type="button" aria-expanded="false" aria-controls="navSheet" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="nav__sheet" id="navSheet" inert>
+  <ul class="nav__sheet-links">
+    <li><a href="#work"><span class="num">01</span> Work</a></li>
+    <li><a href="#about"><span class="num">02</span> About</a></li>
+    <li><a href="#skills"><span class="num">03</span> Expertise</a></li>
+    <li><a href="#experience"><span class="num">04</span> Experience</a></li>
+    <li><a href="#education"><span class="num">05</span> Education</a></li>
+    <li><a href="#contact"><span class="num">06</span> Contact</a></li>
+  </ul>
+  <div class="nav__sheet-foot">
+    <a href="mailto:dogra.rohit2002@gmail.com" class="link-arrow link-arrow--accent">dogra.rohit2002@gmail.com</a>
+    <ul class="social-row">
+      <li><a href="https://www.linkedin.com/in/rohit-dogra-96973b240/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+      <li><a href="https://github.com/Rohit-Dogra" target="_blank" rel="noopener" aria-label="GitHub"><svg aria-hidden="true"><use href="#i-github"/></svg></a></li>
+      <li><a href="https://www.instagram.com/rohit_singh_dogra/profilecard/?igsh=NDVhM2U2MDBrMWI2" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+    </ul>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ── Hero ────────────────────────────────────────────────────────────── -->
+<section class="hero" id="home">
+  <div class="shell">
+
+    <div class="hero__kicker" data-reveal="fade">
+      <span class="status"><span class="dot" aria-hidden="true"></span> Available for select projects</span>
+      <span class="hero__role">Frontend Engineer &amp; UI/UX Designer — Gurugram, IN</span>
+    </div>
+
+    <h1 class="hero__title">
+      <span class="mask-line"><span style="--reveal-delay:80ms">I design and build</span></span>
+      <span class="mask-line"><span style="--reveal-delay:200ms">products that <span class="hl">look sharp</span>,</span></span>
+      <span class="mask-line"><span style="--reveal-delay:320ms">work smart, and scale.</span></span>
+    </h1>
+
+    <div class="hero__grid">
+      <div class="hero__col">
+        <p class="hero__lead" data-reveal style="--reveal-delay:520ms">
+          I'm <strong>Rohit Dogra</strong> — I work across the whole surface of a product, from
+          interface design to shipped frontend to the servers it runs on.
+          <strong>Twenty-plus live products</strong> later, most of my work still lives in
+          SaaS dashboards, internal platforms and e-commerce — turning messy operations
+          into something people can read at a glance.
+        </p>
+
+        <div class="hero__actions" data-reveal style="--reveal-delay:620ms">
+          <a href="#work" class="btn btn--primary">View my work <svg aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+          <a href="#contact" class="btn btn--ghost">Let's work together <svg aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+        </div>
+
+        <div class="hero__socials" data-reveal style="--reveal-delay:700ms">
+          <span class="mono">Find me</span>
+          <ul class="social-row">
+            <li><a href="https://www.linkedin.com/in/rohit-dogra-96973b240/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+            <li><a href="https://github.com/Rohit-Dogra" target="_blank" rel="noopener" aria-label="GitHub"><svg aria-hidden="true"><use href="#i-github"/></svg></a></li>
+            <li><a href="mailto:dogra.rohit2002@gmail.com" aria-label="Email Rohit"><svg aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+            <li><a href="https://www.instagram.com/rohit_singh_dogra/profilecard/?igsh=NDVhM2U2MDBrMWI2" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+            <li><a href="https://www.facebook.com/rohit.dogra.79827?mibextid=ZbWKwL" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true"><use href="#i-facebook"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hero__media" data-reveal="scale" style="--reveal-delay:400ms">
+        <div class="portrait">
+          <img src="/assets/images/Profile-608.jpg"
+               srcset="/assets/images/Profile-608.jpg 608w,
+                       /assets/images/Profile-912.jpg 912w,
+                       /assets/images/Profile.jpg 1794w"
+               sizes="(max-width: 560px) calc(100vw - 2.5rem), (max-width: 980px) 20rem, 19rem"
+               width="1794" height="2256"
+               alt="Portrait of Rohit Dogra" fetchpriority="high" decoding="async">
+        </div>
+        <div class="hero__card">
+          <span class="k">Currently</span>
+          <span class="v">Software Engineer <span>@ CoTask</span></span>
+          <span class="k" style="margin-top:.35rem">Shipped</span>
+          <span class="v"><span>20+</span> live products</span>
+        </div>
+      </div>
+    </div>
+
+    <a href="#work" class="hero__cue" data-reveal="fade" style="--reveal-delay:820ms">
+      <span class="rail" aria-hidden="true"></span> Scroll to selected work
+    </a>
+
+  </div>
+</section>
+
+<!-- ── Capability marquee ──────────────────────────────────────────────── -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <div class="marquee__group">
+      <span>SaaS Dashboards</span><i>✦</i><span>Design Systems</span><i>✦</i><span>E-commerce</span><i>✦</i>
+      <span>Internal Tools</span><i>✦</i><span>React</span><i>✦</i><span>Next.js</span><i>✦</i>
+      <span>TypeScript</span><i>✦</i><span>Shopify · Liquid</span><i>✦</i><span>MCP Servers</span><i>✦</i>
+      <span>Admin Panels</span><i>✦</i><span>Figma</span><i>✦</i><span>Node.js</span><i>✦</i>
+      <span>VPS &amp; Cloud</span><i>✦</i><span>Marketplace Ops</span><i>✦</i><span>Product Design</span><i>✦</i>
+    </div>
+    <div class="marquee__group">
+      <span>SaaS Dashboards</span><i>✦</i><span>Design Systems</span><i>✦</i><span>E-commerce</span><i>✦</i>
+      <span>Internal Tools</span><i>✦</i><span>React</span><i>✦</i><span>Next.js</span><i>✦</i>
+      <span>TypeScript</span><i>✦</i><span>Shopify · Liquid</span><i>✦</i><span>MCP Servers</span><i>✦</i>
+      <span>Admin Panels</span><i>✦</i><span>Figma</span><i>✦</i><span>Node.js</span><i>✦</i>
+      <span>VPS &amp; Cloud</span><i>✦</i><span>Marketplace Ops</span><i>✦</i><span>Product Design</span><i>✦</i>
+    </div>
+  </div>
+</div>
+
+<!-- ── Selected Work ───────────────────────────────────────────────────── -->
+<section class="section" id="work">
+  <div class="shell">
+
+    <div class="sec-head sec-head--split" data-reveal>
+      <div>
+        <p class="sec-eyebrow"><span class="idx">01</span> Selected Work</p>
+        <h2 class="sec-title">Twenty-plus shipped.<br><em>The ones that count.</em></h2>
+      </div>
+      <p class="sec-lead">
+        Platforms I've designed, built or contributed to across marketplace operations,
+        analytics, internal tooling and retail. Every one is in production — open any
+        case study to see how it was approached.
+      </p>
+    </div>
+
+    <div class="work__list">
+
+      <!-- ── 01 · GrowithAmazon ── -->
+      <article class="proj proj--feature" data-reveal>
+        <div class="proj__media">
+          <a class="frame" href="/projects/growithamazon/" aria-label="Read the GrowithAmazon case study">
+            <div class="frame__bar"><span class="frame__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="frame__url">growithamazon.com</span></div>
+            <div class="frame__screen" data-mock="growithamazon">
+              <svg viewBox="0 0 800 500" role="img" aria-label="Interface mockup of the GrowithAmazon platform showing navigation, a hero section, a performance chart and service cards">
+                <rect width="800" height="500" fill="#0a0b0d"/>
+                <rect width="800" height="46" fill="#101216"/><path d="M0 46.5h800" stroke="#1c1f26"/>
+                <circle cx="32" cy="23" r="8" fill="#efb749"/><rect x="48" y="19" width="76" height="8" rx="4" fill="#363c47"/>
+                <g fill="#262a32"><rect x="300" y="20" width="46" height="6" rx="3"/><rect x="360" y="20" width="38" height="6" rx="3"/><rect x="412" y="20" width="52" height="6" rx="3"/><rect x="478" y="20" width="40" height="6" rx="3"/></g>
+                <rect x="686" y="12" width="88" height="23" rx="11.5" fill="#efb749" opacity=".92"/>
+                <g class="mk-fade mk-fade--1">
+                  <rect x="40" y="86" width="104" height="8" rx="4" fill="#efb749" opacity=".55"/>
+                  <rect x="40" y="110" width="300" height="18" rx="4" fill="#434a57"/>
+                  <rect x="40" y="136" width="246" height="18" rx="4" fill="#434a57"/>
+                  <rect x="40" y="162" width="168" height="18" rx="4" fill="#2b3038"/>
+                  <rect x="40" y="198" width="322" height="7" rx="3.5" fill="#22262d"/>
+                  <rect x="40" y="213" width="268" height="7" rx="3.5" fill="#22262d"/>
+                  <rect x="40" y="240" width="112" height="30" rx="15" fill="#efb749"/>
+                  <rect x="162" y="240.5" width="102" height="29" rx="14.5" fill="none" stroke="#2f343d"/>
+                </g>
+                <rect x="424" y="80" width="336" height="196" rx="12" fill="#101318" stroke="#1e2128"/>
+                <g class="mk-fade mk-fade--2"><rect x="446" y="100" width="88" height="7" rx="3.5" fill="#363c47"/><rect x="446" y="114" width="54" height="6" rx="3" fill="#22262d"/></g>
+                <g fill="#efb749" opacity=".85">
+                  <rect class="mk-bar" x="448" y="196" width="26" height="52" rx="3"/>
+                  <rect class="mk-bar" x="490" y="176" width="26" height="72" rx="3"/>
+                  <rect class="mk-bar" x="532" y="204" width="26" height="44" rx="3"/>
+                  <rect class="mk-bar" x="574" y="158" width="26" height="90" rx="3"/>
+                  <rect class="mk-bar" x="616" y="184" width="26" height="64" rx="3"/>
+                  <rect class="mk-bar" x="658" y="140" width="26" height="108" rx="3"/>
+                  <rect class="mk-bar" x="700" y="166" width="26" height="82" rx="3"/>
+                </g>
+                <path d="M440 256h304" stroke="#1e2128"/>
+                <g class="mk-fade mk-fade--3">
+                  <g fill="#101318" stroke="#1e2128"><rect x="40" y="304" width="171" height="66" rx="9"/><rect x="223" y="304" width="171" height="66" rx="9"/><rect x="406" y="304" width="171" height="66" rx="9"/><rect x="589" y="304" width="171" height="66" rx="9"/></g>
+                  <g fill="#efb749" opacity=".8"><rect x="58" y="320" width="40" height="12" rx="3"/><rect x="241" y="320" width="52" height="12" rx="3"/><rect x="424" y="320" width="34" height="12" rx="3"/><rect x="607" y="320" width="46" height="12" rx="3"/></g>
+                  <g fill="#22262d"><rect x="58" y="344" width="78" height="6" rx="3"/><rect x="241" y="344" width="66" height="6" rx="3"/><rect x="424" y="344" width="86" height="6" rx="3"/><rect x="607" y="344" width="72" height="6" rx="3"/></g>
+                </g>
+                <g class="mk-fade mk-fade--4">
+                  <g fill="#101318" stroke="#1e2128"><rect x="40" y="396" width="230" height="76" rx="9"/><rect x="285" y="396" width="230" height="76" rx="9"/><rect x="530" y="396" width="230" height="76" rx="9"/></g>
+                  <g fill="#2f343d"><rect x="58" y="414" width="20" height="20" rx="5"/><rect x="303" y="414" width="20" height="20" rx="5"/><rect x="548" y="414" width="20" height="20" rx="5"/></g>
+                  <g fill="#363c47"><rect x="88" y="419" width="86" height="8" rx="4"/><rect x="333" y="419" width="104" height="8" rx="4"/><rect x="578" y="419" width="72" height="8" rx="4"/></g>
+                  <g fill="#1e2229"><rect x="58" y="446" width="180" height="6" rx="3"/><rect x="303" y="446" width="156" height="6" rx="3"/><rect x="548" y="446" width="196" height="6" rx="3"/></g>
+                </g>
+              </svg>
+            </div>
+            <span class="frame__badge">Case study <svg aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
+          </a>
+        </div>
+
+        <div class="proj__body">
+          <div class="proj__top"><span class="proj__idx">01</span><span class="proj__cat">E-commerce · SaaS Platform</span></div>
+          <h3 class="proj__title"><a href="https://growithamazon.com/" target="_blank" rel="noopener">GrowithAmazon</a></h3>
+          <p class="proj__desc">
+            A full-service Amazon and marketplace growth platform — PPC, listing optimisation,
+            catalogue and account management pulled into one professional digital ecosystem.
+          </p>
+          <dl class="proj__meta">
+            <div><dt>Role</dt><dd>Frontend development &amp; UI implementation</dd></div>
+            <div><dt>Contribution</dt><dd>Translated a sprawling service catalogue into a navigable, conversion-oriented site architecture.</dd></div>
+          </dl>
+          <ul class="chip-row" aria-label="Technologies">
+            <li class="chip">Next.js</li><li class="chip">React</li><li class="chip">TypeScript</li><li class="chip">Tailwind CSS</li><li class="chip">Responsive UI</li>
+          </ul>
+          <div class="proj__actions">
+            <a href="https://growithamazon.com/" class="link-arrow" target="_blank" rel="noopener">Visit site <svg aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+            <a class="case-link" href="/projects/growithamazon/"><span class="case-link__sign" aria-hidden="true"><svg aria-hidden="true"><use href="#i-arrow-r"/></svg></span> Read case study</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── 02 · Analytics Dashboard ── -->
+      <article class="proj proj--feature is-flip" data-reveal>
+        <div class="proj__media">
+          <a class="frame" href="/projects/analytics-dashboard/" aria-label="Read the the GrowithAmazon Analytics Dashboard case study">
+            <div class="frame__bar"><span class="frame__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="frame__url">dashboard.growithamazon.com</span></div>
+            <div class="frame__screen" data-mock="analytics-dashboard">
+              <svg viewBox="0 0 800 500" role="img" aria-label="Interface mockup of an analytics dashboard with a sidebar, KPI cards, a revenue trend line and a channel breakdown chart">
+                <rect width="800" height="500" fill="#0a0b0d"/>
+                <rect width="176" height="500" fill="#0e1014"/><path d="M176.5 0v500" stroke="#1c1f26"/>
+                <circle cx="30" cy="30" r="7" fill="#efb749"/><rect x="44" y="26" width="64" height="8" rx="4" fill="#363c47"/>
+                <rect x="16" y="66" width="144" height="30" rx="7" fill="#191c22"/><rect x="30" y="77" width="12" height="8" rx="2" fill="#efb749"/><rect x="52" y="77" width="66" height="8" rx="4" fill="#454c58"/>
+                <g><rect x="30" y="115" width="12" height="8" rx="2" fill="#2b3038"/><rect x="52" y="115" width="80" height="8" rx="4" fill="#2b3038"/>
+                   <rect x="30" y="147" width="12" height="8" rx="2" fill="#2b3038"/><rect x="52" y="147" width="58" height="8" rx="4" fill="#2b3038"/>
+                   <rect x="30" y="179" width="12" height="8" rx="2" fill="#2b3038"/><rect x="52" y="179" width="72" height="8" rx="4" fill="#2b3038"/>
+                   <rect x="30" y="211" width="12" height="8" rx="2" fill="#2b3038"/><rect x="52" y="211" width="50" height="8" rx="4" fill="#2b3038"/>
+                   <rect x="30" y="243" width="12" height="8" rx="2" fill="#2b3038"/><rect x="52" y="243" width="86" height="8" rx="4" fill="#2b3038"/></g>
+                <rect x="16" y="418" width="144" height="60" rx="9" fill="#131720" stroke="#232833"/><rect x="32" y="434" width="60" height="7" rx="3.5" fill="#efb749" opacity=".7"/><rect x="32" y="450" width="100" height="6" rx="3" fill="#22262d"/>
+                <path d="M176 54.5h624" stroke="#1c1f26"/>
+                <rect x="204" y="22" width="120" height="10" rx="5" fill="#454c58"/><rect x="204" y="38" width="76" height="6" rx="3" fill="#22262d"/>
+                <rect x="620" y="18" width="76" height="22" rx="11" fill="#191c22" stroke="#232833"/><rect x="706" y="18" width="68" height="22" rx="11" fill="#efb749" opacity=".9"/>
+                <g class="mk-fade mk-fade--1" fill="#101318" stroke="#1e2128">
+                  <rect x="204" y="78" width="182" height="86" rx="10"/><rect x="404" y="78" width="182" height="86" rx="10"/><rect x="604" y="78" width="170" height="86" rx="10"/>
+                </g>
+                <g class="mk-fade mk-fade--1">
+                  <g fill="#2b3038"><rect x="222" y="96" width="56" height="6" rx="3"/><rect x="422" y="96" width="48" height="6" rx="3"/><rect x="622" y="96" width="62" height="6" rx="3"/></g>
+                  <g fill="#e9edf3"><rect x="222" y="112" width="82" height="16" rx="4"/><rect x="422" y="112" width="66" height="16" rx="4"/><rect x="622" y="112" width="74" height="16" rx="4"/></g>
+                  <g fill="#6ee7a8" opacity=".85"><rect x="222" y="140" width="40" height="8" rx="4"/><rect x="422" y="140" width="34" height="8" rx="4"/></g>
+                  <rect x="622" y="140" width="44" height="8" rx="4" fill="#ff7a6b" opacity=".75"/>
+                </g>
+                <rect x="204" y="186" width="382" height="196" rx="10" fill="#101318" stroke="#1e2128"/>
+                <rect x="224" y="206" width="90" height="7" rx="3.5" fill="#454c58"/><rect x="224" y="220" width="58" height="6" rx="3" fill="#22262d"/>
+                <g stroke="#181c22"><path d="M224 350h342M224 314h342M224 278h342M224 242h342"/></g>
+                <path class="mk-line" d="M228 330 274 300 320 312 366 268 412 286 458 236 504 252 550 214" fill="none" stroke="#efb749" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path class="mk-line" d="M228 344 274 336 320 342 366 320 412 330 458 306 504 316 550 296" fill="none" stroke="#3d5aff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
+                <g class="mk-fade mk-fade--3" fill="#22262d"><rect x="228" y="362" width="26" height="6" rx="3"/><rect x="292" y="362" width="26" height="6" rx="3"/><rect x="356" y="362" width="26" height="6" rx="3"/><rect x="420" y="362" width="26" height="6" rx="3"/><rect x="484" y="362" width="26" height="6" rx="3"/><rect x="540" y="362" width="26" height="6" rx="3"/></g>
+                <rect x="604" y="186" width="170" height="196" rx="10" fill="#101318" stroke="#1e2128"/>
+                <rect x="622" y="206" width="72" height="7" rx="3.5" fill="#454c58"/>
+                <g fill="#efb749" opacity=".8">
+                  <rect class="mk-bar" x="624" y="290" width="18" height="60" rx="3"/>
+                  <rect class="mk-bar" x="652" y="266" width="18" height="84" rx="3"/>
+                  <rect class="mk-bar" x="680" y="302" width="18" height="48" rx="3"/>
+                  <rect class="mk-bar" x="708" y="242" width="18" height="108" rx="3"/>
+                  <rect class="mk-bar" x="736" y="278" width="18" height="72" rx="3"/>
+                </g>
+                <path d="M620 350.5h136" stroke="#1e2128"/>
+                <g class="mk-fade mk-fade--4" fill="#22262d"><rect x="622" y="364" width="112" height="6" rx="3"/></g>
+                <g class="mk-fade mk-fade--4">
+                  <rect x="204" y="404" width="570" height="74" rx="10" fill="#101318" stroke="#1e2128"/>
+                  <g fill="#2b3038"><rect x="224" y="422" width="70" height="6" rx="3"/><rect x="360" y="422" width="52" height="6" rx="3"/><rect x="500" y="422" width="60" height="6" rx="3"/><rect x="640" y="422" width="44" height="6" rx="3"/></g>
+                  <path d="M212 440.5h554" stroke="#181c22"/>
+                  <g fill="#363c47"><rect x="224" y="452" width="96" height="7" rx="3.5"/><rect x="360" y="452" width="64" height="7" rx="3.5"/><rect x="500" y="452" width="78" height="7" rx="3.5"/></g>
+                  <rect x="640" y="450" width="52" height="11" rx="5.5" fill="#6ee7a8" opacity=".5"/>
+                </g>
+              </svg>
+            </div>
+            <span class="frame__badge">Case study <svg aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
+          </a>
+        </div>
+
+        <div class="proj__body">
+          <div class="proj__top"><span class="proj__idx">02</span><span class="proj__cat">SaaS · Analytics · Dashboard</span></div>
+          <h3 class="proj__title"><a href="https://dashboard.growithamazon.com/" target="_blank" rel="noopener">Analytics Dashboard</a></h3>
+          <p class="proj__desc">
+            A unified reporting surface for Amazon sellers and agencies — sales, inventory,
+            returns and advertising pulled from a dozen connected platforms into one readable view.
+          </p>
+          <dl class="proj__meta">
+            <div><dt>Role</dt><dd>Frontend engineering &amp; data-interface design</dd></div>
+            <div><dt>Contribution</dt><dd>Designed the KPI, trend and drill-down patterns that make multi-marketplace data legible at a glance.</dd></div>
+          </dl>
+          <ul class="chip-row" aria-label="Technologies">
+            <li class="chip">Next.js</li><li class="chip">React</li><li class="chip">TypeScript</li><li class="chip">REST APIs</li><li class="chip">Data Viz</li><li class="chip">Design System</li>
+          </ul>
+          <div class="proj__actions">
+            <a href="https://dashboard.growithamazon.com/" class="link-arrow" target="_blank" rel="noopener">Visit site <svg aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+            <a class="case-link" href="/projects/analytics-dashboard/"><span class="case-link__sign" aria-hidden="true"><svg aria-hidden="true"><use href="#i-arrow-r"/></svg></span> Read case study</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── 03 + 04 pair ── -->
+      <div class="work__pair">
+
+        <!-- ── 03 · WorkflowHub ── -->
+        <article class="proj proj--half" data-reveal>
+          <div class="proj__media">
+            <a class="frame" href="/projects/workflowhub/" aria-label="Read the WorkflowHub case study">
+              <div class="frame__bar"><span class="frame__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="frame__url">workflowhub.growithamazon.com</span></div>
+              <div class="frame__screen" data-mock="workflowhub">
+                <svg viewBox="0 0 800 500" role="img" aria-label="Interface mockup of a workflow board with three task columns, assignee avatars and status tags">
+                  <rect width="800" height="500" fill="#0a0b0d"/>
+                  <rect width="800" height="52" fill="#0e1014"/><path d="M0 52.5h800" stroke="#1c1f26"/>
+                  <rect x="24" y="20" width="104" height="12" rx="4" fill="#454c58"/>
+                  <rect x="176" y="18" width="164" height="24" rx="7" fill="#161a20"/>
+                  <rect x="182" y="23" width="48" height="14" rx="5" fill="#efb749" opacity=".9"/>
+                  <rect x="242" y="27" width="32" height="6" rx="3" fill="#2b3038"/><rect x="288" y="27" width="42" height="6" rx="3" fill="#2b3038"/>
+                  <g fill="#232833" stroke="#0e1014" stroke-width="2"><circle cx="686" cy="30" r="11"/><circle cx="708" cy="30" r="11"/><circle cx="730" cy="30" r="11"/></g>
+                  <circle cx="758" cy="30" r="11" fill="#efb749" opacity=".85"/>
+
+                  <g class="mk-fade mk-fade--1">
+                    <rect x="24" y="72" width="240" height="404" rx="11" fill="#0e1014" stroke="#1c1f26"/>
+                    <circle cx="46" cy="96" r="5" fill="#7c8496"/><rect x="60" y="92" width="62" height="8" rx="4" fill="#454c58"/><rect x="220" y="90" width="22" height="12" rx="6" fill="#191c22"/>
+                    <g fill="#131720" stroke="#232833"><rect x="40" y="118" width="208" height="80" rx="9"/><rect x="40" y="210" width="208" height="80" rx="9"/><rect x="40" y="302" width="208" height="66" rx="9"/></g>
+                    <g fill="#3d434e"><rect x="56" y="134" width="128" height="8" rx="4"/><rect x="56" y="226" width="102" height="8" rx="4"/><rect x="56" y="318" width="140" height="8" rx="4"/></g>
+                    <g fill="#1e2229"><rect x="56" y="150" width="168" height="6" rx="3"/><rect x="56" y="162" width="118" height="6" rx="3"/><rect x="56" y="242" width="152" height="6" rx="3"/><rect x="56" y="254" width="96" height="6" rx="3"/><rect x="56" y="334" width="160" height="6" rx="3"/></g>
+                    <rect x="56" y="178" width="46" height="12" rx="6" fill="#3d5aff" opacity=".35"/><rect x="56" y="270" width="58" height="12" rx="6" fill="#efb749" opacity=".35"/><rect x="56" y="348" width="40" height="12" rx="6" fill="#3d5aff" opacity=".35"/>
+                    <g fill="#232833" stroke="#131720" stroke-width="1.5"><circle cx="222" cy="184" r="9"/><circle cx="208" cy="184" r="9"/><circle cx="222" cy="276" r="9"/><circle cx="222" cy="354" r="9"/></g>
+                  </g>
+
+                  <g class="mk-fade mk-fade--2">
+                    <rect x="280" y="72" width="240" height="404" rx="11" fill="#0e1014" stroke="#1c1f26"/>
+                    <circle cx="302" cy="96" r="5" fill="#efb749"/><rect x="316" y="92" width="76" height="8" rx="4" fill="#454c58"/><rect x="476" y="90" width="22" height="12" rx="6" fill="#191c22"/>
+                    <g fill="#131720" stroke="#2c333f"><rect x="296" y="118" width="208" height="92" rx="9"/><rect x="296" y="222" width="208" height="80" rx="9"/></g>
+                    <g fill="#3d434e"><rect x="312" y="134" width="150" height="8" rx="4"/><rect x="312" y="238" width="118" height="8" rx="4"/></g>
+                    <g fill="#1e2229"><rect x="312" y="150" width="172" height="6" rx="3"/><rect x="312" y="162" width="140" height="6" rx="3"/><rect x="312" y="174" width="96" height="6" rx="3"/><rect x="312" y="254" width="160" height="6" rx="3"/><rect x="312" y="266" width="110" height="6" rx="3"/></g>
+                    <rect x="312" y="190" width="62" height="12" rx="6" fill="#6ee7a8" opacity=".35"/><rect x="312" y="282" width="46" height="12" rx="6" fill="#efb749" opacity=".35"/>
+                    <g fill="#232833" stroke="#131720" stroke-width="1.5"><circle cx="478" cy="196" r="9"/><circle cx="478" cy="288" r="9"/><circle cx="464" cy="288" r="9"/></g>
+                    <rect x="296" y="314" width="208" height="34" rx="9" fill="none" stroke="#232833" stroke-dasharray="4 4"/><rect x="378" y="327" width="44" height="8" rx="4" fill="#2b3038"/>
+                  </g>
+
+                  <g class="mk-fade mk-fade--3">
+                    <rect x="536" y="72" width="240" height="404" rx="11" fill="#0e1014" stroke="#1c1f26"/>
+                    <circle cx="558" cy="96" r="5" fill="#6ee7a8"/><rect x="572" y="92" width="54" height="8" rx="4" fill="#454c58"/><rect x="732" y="90" width="22" height="12" rx="6" fill="#191c22"/>
+                    <g fill="#131720" stroke="#232833" opacity=".8"><rect x="552" y="118" width="208" height="70" rx="9"/><rect x="552" y="200" width="208" height="70" rx="9"/><rect x="552" y="282" width="208" height="70" rx="9"/><rect x="552" y="364" width="208" height="70" rx="9"/></g>
+                    <g fill="#2b3038"><rect x="568" y="134" width="112" height="8" rx="4"/><rect x="568" y="216" width="136" height="8" rx="4"/><rect x="568" y="298" width="98" height="8" rx="4"/><rect x="568" y="380" width="124" height="8" rx="4"/></g>
+                    <g fill="#1a1e24"><rect x="568" y="152" width="150" height="6" rx="3"/><rect x="568" y="234" width="128" height="6" rx="3"/><rect x="568" y="316" width="162" height="6" rx="3"/><rect x="568" y="398" width="140" height="6" rx="3"/></g>
+                    <g fill="#6ee7a8" opacity=".3"><rect x="568" y="168" width="40" height="10" rx="5"/><rect x="568" y="250" width="40" height="10" rx="5"/><rect x="568" y="332" width="40" height="10" rx="5"/><rect x="568" y="414" width="40" height="10" rx="5"/></g>
+                  </g>
+                </svg>
+              </div>
+              <span class="frame__badge">Case study <svg aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
+            </a>
+          </div>
+
+          <div class="proj__body">
+            <div class="proj__top"><span class="proj__idx">03</span><span class="proj__cat">SaaS · Workflow</span></div>
+            <h3 class="proj__title"><a href="https://workflowhub.growithamazon.com/" target="_blank" rel="noopener">WorkflowHub</a></h3>
+            <p class="proj__desc">
+              An internal operations platform where tasks, tickets and daily account checks live
+              in one workspace — with separate admin, manager and employee portals.
+            </p>
+            <dl class="proj__meta">
+              <div><dt>Role</dt><dd>Full-stack development &amp; product UI</dd></div>
+              <div><dt>Contribution</dt><dd>Built the board, task and role-based portal experience, including the Zoho Desk ticket sync surface.</dd></div>
+            </dl>
+            <ul class="chip-row" aria-label="Technologies">
+              <li class="chip">Next.js</li><li class="chip">React</li><li class="chip">TypeScript</li><li class="chip">Node.js</li><li class="chip">JWT Auth</li>
+            </ul>
+            <div class="proj__actions">
+              <a href="https://workflowhub.growithamazon.com/" class="link-arrow" target="_blank" rel="noopener">Visit site <svg aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+              <a class="case-link" href="/projects/workflowhub/"><span class="case-link__sign" aria-hidden="true"><svg aria-hidden="true"><use href="#i-arrow-r"/></svg></span> Read case study</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── 04 · CoTask ── -->
+        <article class="proj proj--half" data-reveal style="--reveal-delay:120ms">
+          <div class="proj__media">
+            <a class="frame" href="/projects/cotask/" aria-label="Read the CoTask case study">
+              <div class="frame__bar"><span class="frame__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="frame__url">cotasks.com</span></div>
+              <div class="frame__screen" data-mock="cotask">
+                <svg viewBox="0 0 800 500" role="img" aria-label="Interface mockup of the CoTask agency website with navigation, a hero statement, service tiles and a partner strip">
+                  <rect width="800" height="500" fill="#0a0b0d"/>
+                  <rect width="800" height="50" fill="#0e1014"/><path d="M0 50.5h800" stroke="#1c1f26"/>
+                  <rect x="28" y="20" width="12" height="12" rx="3" fill="#3d5aff"/><rect x="48" y="21" width="66" height="10" rx="4" fill="#454c58"/>
+                  <g fill="#262a32"><rect x="330" y="23" width="34" height="6" rx="3"/><rect x="378" y="23" width="46" height="6" rx="3"/><rect x="438" y="23" width="40" height="6" rx="3"/><rect x="492" y="23" width="30" height="6" rx="3"/></g>
+                  <rect x="672" y="14" width="102" height="23" rx="11.5" fill="#3d5aff" opacity=".85"/>
+
+                  <g class="mk-fade mk-fade--1">
+                    <rect x="32" y="86" width="128" height="20" rx="10" fill="#3d5aff" opacity=".22"/><rect x="48" y="92" width="82" height="8" rx="4" fill="#3d5aff" opacity=".8"/>
+                    <rect x="32" y="124" width="366" height="22" rx="5" fill="#4b5464"/>
+                    <rect x="32" y="156" width="304" height="22" rx="5" fill="#4b5464"/>
+                    <rect x="32" y="188" width="192" height="22" rx="5" fill="#2b3038"/>
+                    <rect x="32" y="228" width="330" height="7" rx="3.5" fill="#22262d"/>
+                    <rect x="32" y="243" width="276" height="7" rx="3.5" fill="#22262d"/>
+                    <rect x="32" y="272" width="130" height="32" rx="16" fill="#f2f2f0"/>
+                    <rect x="172" y="272.5" width="112" height="31" rx="15.5" fill="none" stroke="#2f343d"/>
+                  </g>
+
+                  <g class="mk-fade mk-fade--2">
+                    <rect x="440" y="86" width="330" height="218" rx="12" fill="#101318" stroke="#1e2128"/>
+                    <rect x="462" y="108" width="286" height="112" rx="8" fill="#151922"/>
+                    <circle cx="510" cy="164" r="20" fill="#3d5aff" opacity=".4"/><path d="m504 156 14 8-14 8z" fill="#8fa2ff"/>
+                    <rect x="462" y="236" width="180" height="8" rx="4" fill="#3d434e"/>
+                    <rect x="462" y="254" width="240" height="6" rx="3" fill="#1e2229"/>
+                    <rect x="462" y="268" width="196" height="6" rx="3" fill="#1e2229"/>
+                  </g>
+
+                  <g class="mk-fade mk-fade--3">
+                    <g fill="#101318" stroke="#1e2128"><rect x="32" y="332" width="234" height="100" rx="10"/><rect x="283" y="332" width="234" height="100" rx="10"/><rect x="534" y="332" width="236" height="100" rx="10"/></g>
+                    <g fill="#3d5aff" opacity=".55"><rect x="52" y="352" width="22" height="22" rx="6"/><rect x="303" y="352" width="22" height="22" rx="6"/><rect x="554" y="352" width="22" height="22" rx="6"/></g>
+                    <g fill="#3d434e"><rect x="52" y="388" width="126" height="8" rx="4"/><rect x="303" y="388" width="98" height="8" rx="4"/><rect x="554" y="388" width="140" height="8" rx="4"/></g>
+                    <g fill="#1e2229"><rect x="52" y="406" width="182" height="6" rx="3"/><rect x="303" y="406" width="160" height="6" rx="3"/><rect x="554" y="406" width="190" height="6" rx="3"/></g>
+                  </g>
+
+                  <g class="mk-fade mk-fade--4">
+                    <path d="M32 458.5h738" stroke="#1a1e24"/>
+                    <g fill="#22262d"><rect x="32" y="474" width="72" height="10" rx="4"/><rect x="152" y="474" width="88" height="10" rx="4"/><rect x="288" y="474" width="64" height="10" rx="4"/><rect x="400" y="474" width="96" height="10" rx="4"/><rect x="544" y="474" width="76" height="10" rx="4"/><rect x="668" y="474" width="102" height="10" rx="4"/></g>
+                  </g>
+                </svg>
+              </div>
+              <span class="frame__badge">Case study <svg aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
+            </a>
+          </div>
+
+          <div class="proj__body">
+            <div class="proj__top"><span class="proj__idx">04</span><span class="proj__cat">Agency · Digital Growth</span></div>
+            <h3 class="proj__title"><a href="https://cotasks.com/" target="_blank" rel="noopener">CoTask</a></h3>
+            <p class="proj__desc">
+              The public face of a technology and digital-growth agency — marketplace management,
+              performance marketing and e-commerce development, all made legible to a first-time visitor.
+            </p>
+            <dl class="proj__meta">
+              <div><dt>Role</dt><dd>UI/UX design &amp; frontend development</dd></div>
+              <div><dt>Contribution</dt><dd>Designed the service architecture and conversion-oriented layouts, and built the responsive frontend.</dd></div>
+            </dl>
+            <ul class="chip-row" aria-label="Technologies">
+              <li class="chip">Next.js</li><li class="chip">React</li><li class="chip">Tailwind CSS</li><li class="chip">Figma</li><li class="chip">SEO</li>
+            </ul>
+            <div class="proj__actions">
+              <a href="https://cotasks.com/" class="link-arrow" target="_blank" rel="noopener">Visit site <svg aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+              <a class="case-link" href="/projects/cotask/"><span class="case-link__sign" aria-hidden="true"><svg aria-hidden="true"><use href="#i-arrow-r"/></svg></span> Read case study</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- ── 05 · Paris Corner ── -->
+      <article class="proj proj--wide" data-reveal>
+        <div class="proj__media">
+          <a class="frame" href="/projects/paris-corner/" aria-label="Read the Paris Corner UAE case study">
+            <div class="frame__bar"><span class="frame__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="frame__url">pariscorner.ae</span></div>
+            <div class="frame__screen" data-mock="paris-corner">
+              <svg viewBox="0 0 1200 420" role="img" aria-label="Interface mockup of the Paris Corner fragrance storefront with a centred wordmark, hero banner and a product grid">
+                <rect width="1200" height="420" fill="#08080a"/>
+                <rect width="1200" height="20" fill="#14110b"/><rect x="516" y="7" width="168" height="6" rx="3" fill="#c9a227" opacity=".75"/>
+                <rect y="20" width="1200" height="54" fill="#0c0c0e"/><path d="M0 74.5h1200" stroke="#1e1b16"/>
+                <g fill="#2a2620"><rect x="40" y="44" width="48" height="6" rx="3"/><rect x="104" y="44" width="62" height="6" rx="3"/><rect x="182" y="44" width="44" height="6" rx="3"/></g>
+                <rect x="536" y="38" width="128" height="14" rx="3" fill="#e6ddc8"/><rect x="566" y="58" width="68" height="4" rx="2" fill="#c9a227" opacity=".6"/>
+                <g fill="#2a2620"><rect x="1004" y="44" width="40" height="6" rx="3"/><rect x="1060" y="44" width="34" height="6" rx="3"/><circle cx="1140" cy="47" r="8"/></g>
+
+                <g class="mk-fade mk-fade--1">
+                  <rect x="40" y="98" width="1120" height="132" rx="6" fill="#100e0c"/>
+                  <rect x="52" y="110" width="1096" height="108" rx="3" fill="none" stroke="#c9a227" stroke-opacity=".3"/>
+                  <rect x="500" y="136" width="200" height="16" rx="3" fill="#e6ddc8"/>
+                  <rect x="452" y="164" width="296" height="7" rx="3.5" fill="#3a352c"/>
+                  <rect x="524" y="182" width="152" height="7" rx="3.5" fill="#3a352c"/>
+                  <rect x="548" y="200" width="104" height="1" fill="#c9a227" opacity=".7"/>
+                </g>
+
+                <g class="mk-fade mk-fade--2">
+                  <rect x="40" y="252" width="160" height="10" rx="5" fill="#4a443a"/>
+                  <rect x="1080" y="252" width="80" height="10" rx="5" fill="#c9a227" opacity=".6"/>
+                </g>
+
+                <g class="mk-fade mk-fade--3">
+                  <g fill="#0e0d0c" stroke="#1e1b16">
+                    <rect x="40" y="282" width="266" height="118" rx="6"/><rect x="325" y="282" width="266" height="118" rx="6"/>
+                    <rect x="610" y="282" width="266" height="118" rx="6"/><rect x="895" y="282" width="265" height="118" rx="6"/>
+                  </g>
+                  <g fill="#1c1a17"><rect x="152" y="300" width="42" height="66" rx="6"/><rect x="437" y="300" width="42" height="66" rx="6"/><rect x="722" y="300" width="42" height="66" rx="6"/><rect x="1006" y="300" width="42" height="66" rx="6"/></g>
+                  <g fill="#c9a227" opacity=".55"><rect x="166" y="292" width="14" height="12" rx="2"/><rect x="451" y="292" width="14" height="12" rx="2"/><rect x="736" y="292" width="14" height="12" rx="2"/><rect x="1020" y="292" width="14" height="12" rx="2"/></g>
+                  <g fill="#2f2b25"><rect x="152" y="322" width="42" height="3"/><rect x="437" y="322" width="42" height="3"/><rect x="722" y="322" width="42" height="3"/><rect x="1006" y="322" width="42" height="3"/></g>
+                  <g fill="#4a443a"><rect x="60" y="378" width="96" height="7" rx="3.5"/><rect x="345" y="378" width="116" height="7" rx="3.5"/><rect x="630" y="378" width="82" height="7" rx="3.5"/><rect x="915" y="378" width="104" height="7" rx="3.5"/></g>
+                  <g fill="#c9a227" opacity=".7"><rect x="242" y="378" width="44" height="7" rx="3.5"/><rect x="527" y="378" width="44" height="7" rx="3.5"/><rect x="812" y="378" width="44" height="7" rx="3.5"/><rect x="1096" y="378" width="44" height="7" rx="3.5"/></g>
+                </g>
+              </svg>
+            </div>
+            <span class="frame__badge">Case study <svg aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
+          </a>
+        </div>
+
+        <div class="proj__body">
+          <div>
+            <div class="proj__top"><span class="proj__idx">05</span><span class="proj__cat">E-commerce · Luxury D2C</span></div>
+            <h3 class="proj__title"><a href="https://pariscorner.ae/" target="_blank" rel="noopener">Paris Corner UAE</a></h3>
+            <p class="proj__desc">
+              A premium Shopify storefront for a UAE fragrance house carrying nine sub-brands —
+              where the product has to carry the page and the interface has to get out of its way.
+            </p>
+          </div>
+          <div>
+            <dl class="proj__meta">
+              <div><dt>Role</dt><dd>Shopify theme development &amp; storefront UX</dd></div>
+              <div><dt>Contribution</dt><dd>Built the storefront end to end in Liquid — product presentation, collection browsing and the visual language that keeps a nine-brand catalogue feeling like one house.</dd></div>
+            </dl>
+            <ul class="chip-row" aria-label="Technologies">
+              <li class="chip">Shopify</li><li class="chip">Liquid</li><li class="chip">JavaScript</li><li class="chip">CSS</li><li class="chip">Theme architecture</li>
+            </ul>
+            <div class="proj__actions">
+              <a href="https://pariscorner.ae/" class="link-arrow" target="_blank" rel="noopener">Visit site <svg aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+              <a class="case-link" href="/projects/paris-corner/"><span class="case-link__sign" aria-hidden="true"><svg aria-hidden="true"><use href="#i-arrow-r"/></svg></span> Read case study</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="alsohead" data-reveal>
+      <h3>Also shipped</h3>
+      <p>Live products, client sites and internal tooling — a selection from the rest of the twenty-plus.</p>
+    </div>
+
+    <ul class="index" data-reveal>
+      <li class="index__row">
+        <a href="https://naukarinavigator.com/" target="_blank" rel="noopener">
+          <span class="index__n">06</span>
+          <span class="index__name">Naukari Navigator</span>
+          <span class="index__cat">AI Recruitment · ATS</span>
+          <span class="index__tech">React · Vite · AWS S3</span>
+          <span class="index__go"><svg aria-hidden="true"><use href="#i-arrow-ur"/></svg></span>
+        </a>
+      </li>
+      <li class="index__row">
+        <a href="https://brenstoneinternational.com/" target="_blank" rel="noopener">
+          <span class="index__n">07</span>
+          <span class="index__name">BrenStone International</span>
+          <span class="index__cat">Corporate · M&amp;A Consulting</span>
+          <span class="index__tech">React · Vite · Hostinger</span>
+          <span class="index__go"><svg aria-hidden="true"><use href="#i-arrow-ur"/></svg></span>
+        </a>
+      </li>
+      <li class="index__row index__row--private">
+        <div>
+          <span class="index__n">08</span>
+          <span class="index__name">MCP Data Servers</span>
+          <span class="index__cat">Internal · Tooling</span>
+          <span class="index__tech">Node.js · MCP · REST APIs</span>
+          <span class="index__lock">Internal</span>
+        </div>
+      </li>
+      <li class="index__row">
+        <a href="https://www.expertisestation.com/" target="_blank" rel="noopener">
+          <span class="index__n">09</span>
+          <span class="index__name">Expertise Station</span>
+          <span class="index__cat">Expert Network · Platform</span>
+          <span class="index__tech">React · Node.js</span>
+          <span class="index__go"><svg aria-hidden="true"><use href="#i-arrow-ur"/></svg></span>
+        </a>
+      </li>
+      <li class="index__row index__row--private">
+        <div>
+          <span class="index__n">10</span>
+          <span class="index__name">Marketplace Ops Panels</span>
+          <span class="index__cat">Internal · Admin</span>
+          <span class="index__tech">Next.js · Node.js · VPS</span>
+          <span class="index__lock">Internal</span>
+        </div>
+      </li>
+      <li class="index__row">
+        <a href="https://expense-tracker-app-three-beryl.vercel.app/" target="_blank" rel="noopener">
+          <span class="index__n">11</span>
+          <span class="index__name">Expense Management System</span>
+          <span class="index__cat">FinTech · MERN</span>
+          <span class="index__tech">MongoDB · Express · React · Node</span>
+          <span class="index__go"><svg aria-hidden="true"><use href="#i-arrow-ur"/></svg></span>
+        </a>
+      </li>
+      <li class="index__row">
+        <a href="https://amazon-travel.netlify.app/" target="_blank" rel="noopener">
+          <span class="index__n">12</span>
+          <span class="index__name">Jungle Odyssey</span>
+          <span class="index__cat">Travel · Web</span>
+          <span class="index__tech">HTML · CSS · JavaScript</span>
+          <span class="index__go"><svg aria-hidden="true"><use href="#i-arrow-ur"/></svg></span>
+        </a>
+      </li>
+    </ul>
+
+    <div style="display:flex;flex-wrap:wrap;gap:var(--s-4);align-items:center;justify-content:space-between;margin-top:clamp(2rem,4vw,3rem)" data-reveal>
+      <p class="sec-lead" style="margin:0;max-width:42ch">Everything else — MERN builds, templates, Android and experiments — lives in the archive.</p>
+      <a href="/projects" class="btn btn--ghost">Browse the full archive <svg aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── About ───────────────────────────────────────────────────────────── -->
+<section class="section" id="about">
+  <div class="shell">
+    <div class="sec-head" data-reveal>
+      <p class="sec-eyebrow"><span class="idx">02</span> About</p>
+    </div>
+
+    <div class="about__grid">
+      <div>
+        <h2 class="about__statement" data-reveal>
+          I design and build digital experiences that connect considered UX with
+          <b>production-ready engineering</b> — from SaaS dashboards and internal
+          platforms to Shopify storefronts and the infrastructure behind them.
+        </h2>
+
+        <div class="about__body" data-reveal style="--reveal-delay:120ms">
+          <p>
+            Most of the products I work on aren't simple. They carry real operational weight —
+            marketplace data from a dozen sources, internal teams with conflicting permissions,
+            catalogues that outgrow their own navigation. My job is to make that weight
+            invisible to the person using it.
+          </p>
+          <p>
+            I work end to end. That means sitting with the actual workflow before opening Figma,
+            designing a system rather than a screen, and then building it myself in React and
+            Next.js so nothing gets lost between the design file and production. I care about
+            the parts people notice last: how a table behaves at 400 rows, what an empty state
+            says, whether a form tells you what went wrong before you submit it.
+          </p>
+          <p>
+            I also build the plumbing when a product needs it — MCP servers that pull live
+            marketplace data into the tools that consume it, and the VPS, cloud and Hostinger
+            environments those tools actually run on. Knowing how something deploys changes
+            how you design it.
+          </p>
+          <p>
+            Currently a Software Engineer at <strong>CoTask IT Solutions</strong> in Gurugram,
+            India — working across frontend engineering, interface design and product thinking
+            for marketplace, SaaS and e-commerce teams.
+          </p>
+        </div>
+      </div>
+
+      <aside class="about__aside" data-reveal="right" style="--reveal-delay:200ms">
+        <div class="factcard">
+          <span class="mono">Profile</span>
+          <dl class="factlist">
+            <div><dt>Current role</dt><dd>Software Engineer<small>CoTask IT Solutions — since May 2026</small></dd></div>
+            <div><dt>Shipped</dt><dd>20+ live products<small>SaaS, commerce &amp; internal tools</small></dd></div>
+            <div><dt>Based in</dt><dd>Gurugram, Haryana<small>India — open to remote</small></dd></div>
+            <div><dt>Email</dt><dd><a href="mailto:dogra.rohit2002@gmail.com">dogra.rohit2002@gmail.com</a></dd></div>
+          </dl>
+        </div>
+
+        <a href="https://drive.google.com/file/d/1ZLZzg_Ud8Cz3UlKdbTWCRqYJLlIdopkE/view" target="_blank" rel="noopener" class="btn btn--ghost" style="justify-content:center">
+          <svg aria-hidden="true"><use href="#i-file"/></svg> Download résumé
+        </a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ── Expertise ───────────────────────────────────────────────────────── -->
+<section class="section" id="skills">
+  <div class="shell">
+    <div class="sec-head sec-head--split" data-reveal>
+      <div>
+        <p class="sec-eyebrow"><span class="idx">03</span> Expertise</p>
+        <h2 class="sec-title">The toolkit,<br><em>and where it's applied.</em></h2>
+      </div>
+  <p class="sec-lead">Filter by discipline to see what I reach for. Everything listed here is something I've shipped with, not something I've read about.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Filter expertise by discipline" data-reveal>
+      <button class="tab" role="tab" aria-selected="true"  data-cat="all">All</button>
+      <button class="tab" role="tab" aria-selected="false" data-cat="frontend">Frontend</button>
+      <button class="tab" role="tab" aria-selected="false" data-cat="design">UI/UX</button>
+      <button class="tab" role="tab" aria-selected="false" data-cat="product">Product</button>
+      <button class="tab" role="tab" aria-selected="false" data-cat="backend">Backend &amp; Data</button>
+      <button class="tab" role="tab" aria-selected="false" data-cat="platform">Platform &amp; Infra</button>
+    </div>
+
+    <div class="skillgrid" id="skillGrid" data-reveal style="--reveal-delay:100ms">
+      <div class="skillcol" data-cat="frontend">
+        <div class="skillcol__head"><h3>Frontend</h3><span>10</span></div>
+        <ul class="skilllist">
+          <li><span>React</span></li><li><span>Next.js</span></li><li><span>TypeScript</span></li><li><span>JavaScript</span></li>
+          <li><span>HTML5</span></li><li><span>CSS3</span></li><li><span>Tailwind CSS</span></li><li><span>Bootstrap</span></li>
+          <li><span>Liquid</span></li><li><span>Vite</span></li>
+        </ul>
+      </div>
+      <div class="skillcol" data-cat="design">
+        <div class="skillcol__head"><h3>UI/UX</h3><span>06</span></div>
+        <ul class="skilllist">
+          <li><span>Figma</span></li><li><span>Design Systems</span></li><li><span>Wireframing</span></li>
+          <li><span>Prototyping</span></li><li><span>Responsive Design</span></li><li><span>User Experience</span></li>
+        </ul>
+      </div>
+      <div class="skillcol" data-cat="product">
+        <div class="skillcol__head"><h3>Product</h3><span>06</span></div>
+        <ul class="skilllist">
+          <li><span>SaaS</span></li><li><span>Dashboards</span></li><li><span>E-commerce</span></li>
+          <li><span>Internal Tools</span></li><li><span>Admin Panels</span></li><li><span>Product Design</span></li>
+        </ul>
+      </div>
+      <div class="skillcol" data-cat="backend">
+        <div class="skillcol__head"><h3>Backend &amp; Data</h3><span>09</span></div>
+        <ul class="skilllist">
+          <li><span>Node.js</span></li><li><span>Express.js</span></li><li><span>Python</span></li><li><span>.NET</span></li>
+          <li><span>MongoDB</span></li><li><span>MySQL</span></li><li><span>PostgreSQL</span></li>
+          <li><span>REST APIs</span></li><li><span>MCP Servers</span></li>
+        </ul>
+      </div>
+      <div class="skillcol" data-cat="platform">
+        <div class="skillcol__head"><h3>Platform &amp; Infra</h3><span>10</span></div>
+        <ul class="skilllist">
+          <li><span>Git</span></li><li><span>GitHub</span></li><li><span>AWS</span></li><li><span>Hostinger</span></li>
+          <li><span>VPS Management</span></li><li><span>Cloud Hosting</span></li><li><span>Netlify</span></li>
+          <li><span>Vercel</span></li><li><span>Shopify</span></li><li><span>WordPress</span></li>
         </ul>
       </div>
     </div>
-<div class="image">
-    <img draggable="false" class="tilt" src="./assets/images/Rohit_mic-photoaidcom-cropped.jpg" alt=""><!--here main proifle-->
-</div>
-</section>
-<!-- hero section ends -->
-
-
-<!-- about section starts -->
-<section class="about" id="about">
-    <h2 class="heading"><i class="fas fa-user-alt"></i> About <span>Me</span></h2>
-    
-    <div class="row">
-
-    <div class="image">
-        <img draggable="false" class="tilt" src="./assets/images/rohitfull.jpg" alt=""> <!--here next proifle-->
-    </div>
-    <div class="content">
-        <h3>I'm Rohit Dogra</h3>
-        <span class="tag">Software Engineer</span>
-        
-        <p> Experienced in building and deploying live applications using React,Typescript, Pyhton, Node.js, NExt.js,
- MySQL, MongoDB, and .NET. Skilled in WordPress theme and plugin customization with a strong focus on clean
- code, problem-solving, and user-friendly development. </p>
-        
-        <div class="box-container">
-            <!-- <div class="box">
-              <p><span> age: </span> 20</p>
-              <p><span> phone : </span> +91 XXX-XXX-XXXX</p>
-            </div> -->
-            <div class="box">
-              <p><span> email : </span>dogra.rohit2002@gmail.com</p>
-              <p><span> place : </span> Gurugran  , India -122018</p>
-            </div>
-        </div>
-        
-        <div class="resumebtn">
-            <a href="https://drive.google.com/file/d/1ZLZzg_Ud8Cz3UlKdbTWCRqYJLlIdopkE/view" target="_blank" class="btn"><span>Resume</span>
-                <i class="fas fa-chevron-right"></i>
-            </a>
-        </div>
-    </div>
-    </div>
-</section>
-<!-- about section ends -->
-
-<!-- skills section starts -->
-<section class="skills" id="skills">
-
-    <h2 class="heading"><i class="fas fa-laptop-code"></i> Skills & <span>Abilities</span></h2>
-
-    <div class="container">
-          <div class="row" id="skillsContainer">
-
-            
-
-      </div>
-</div>
-</section>
-<!-- skills section ends -->
-
-
-<!-- education section starts -->
-<section class="education" id="education">
-
-  <h1 class="heading"><i class="fas fa-graduation-cap"></i> My <span>Education</span></h1>
-
-    <p class="qoute">Education is not the learning of facts, but the training of the mind to think.</p>
-
-    <div class="box-container">
-
-      <div class="box">
-        <div class="image">
-        <img draggable="false" src="./assets/images/educat/thapar-institute-of-engineering-technology-patiala-231246.jpg" alt="">
-        </div>
-        <div class="content">
-        <h3>Master  of Computer Application</h3>
-        <p>Thapar Institute of Engineering & Technology | TIET</p>
-        <h4>2023-2025 | Completed </h4>
-        </div>
-    </div>
-
-    <div class="box">
-        <div class="image">
-        <img draggable="false" src="./assets/images/educat/hpu.jpg" alt="">
-        </div>
-        <div class="content">
-        <h3>Bachelor of Computer Application</h3>
-        <p>Himachal Pradesh University | HPU</p>
-        <h4>2019-2022 | Completed</h4>
-        </div>
-    </div>
-
-    <div class="box">
-      <div class="image">
-      <img draggable="false" src="./assets/images/educat/hp1.avif" alt="">
-      </div>
-      <div class="content">
-      <h3>High school </h3>
-      <p>Govt. Senior Secdonary School Chauri | HP Board</p>
-      <h4>2017-2019| Completed</h4>
-      </div>
-    </div>
-
-</div>
-</section>
-<!-- education section ends -->
-
-
-<!-- work project section starts -->
-<section class="work" id="work">
-
-  <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects <span>Made</span></h2>
-
-  <div class="box-container">
-
-</div>
-
-<div class="viewall">
-  <a href="/projects" class="btn"><span>View All</span>
-    <i class="fas fa-arrow-right"></i>
-</a>
-</div>
-
-</section>
-<!-- work project section ends -->
-
-<!-- experience section starts -->
-<section class="experience" id="experience">
-
-  <h2 class="heading"><i class="fas fa-briefcase"></i> Experience </h2>
-
-  <div class="timeline">
-
-    <div class="container right">
-      <div class="content">
-        <!-- <div class="tag">
-          <h2>Self Employed</h2>
-        </div>
-        <div class="desc">
-            <h3>Full Stack Developer</h3>
-            <p>Jan 2022 - present</p>
-        </div>
-      </div>
-    </div> -->
-
-    <!-- <div class="container left">
-      <div class="content"> -->
-        <div class="tag">
-          <h2>PIIM</h2>
-        </div>
-        <div class="desc">
-            <h3>Website Developer | Full-Time</h3>
-            <p>Nov 2022 - Apr 2023</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="container left">
-      <div class="content">
-        <div class="tag">
-          <h2>Inxee System Private Limited</h2>
-        </div>
-        <div class="desc">
-            <h3>Full Stack Developer |  Full-Time</h3>
-            <p>Jan 2025 - May 2025</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container right">
-      <div class="content">
-        <div class="tag">
-          <h2>BrenStone International</h2>
-        </div>
-        <div class="desc">
-            <h3>Software Developer Engineer (SDE-1) |  Full-Time</h3>
-            <p>April 2025- April 2026</p>
-        </div>
-      </div>
-    </div>
-
-  <div class="morebtn">
-    <a href="/experience" class="btn"><span>View All</span>
-      <i class="fas fa-arrow-right"></i>
-  </a>
-  </div>
-
-</div>
-
-</section>
-<!-- experience section ends -->
-
-<!-- contact section starts -->
-<section class="contact" id="contact">
-  
-  <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
-
-  <div class="container">
-    <div class="content">
-      <div class="image-box">
-        <img draggable="false" src="./assets/images/contact1.png" alt="">
-      </div>
-    <form id="contact-form">
-      
-      <div class="form-group">
-        <div class="field">
-          <input type="text" name="name" placeholder="Name" required>
-          <i class='fas fa-user'></i>
-        </div>
-        <div class="field">
-          <input type="text" name="email" placeholder="Email" required>
-          <i class='fas fa-envelope'></i>
-        </div>
-        <div class="field">
-          <input type="text" name="phone" placeholder="Phone">
-          <i class='fas fa-phone-alt'></i>
-        </div>
-        <div class="message">
-        <textarea placeholder="Message" name="message" required></textarea>
-        <i class="fas fa-comment-dots"></i>
-        </div>
-        </div>
-      <div class="button-area">
-        <button type="submit">
-          Submit <i class="fa fa-paper-plane"></i></button>
-      </div>
-    </form>
-  </div>
   </div>
 </section>
-<!-- contact section ends -->
 
+<!-- ── Experience ──────────────────────────────────────────────────────── -->
+<section class="section" id="experience">
+  <div class="shell">
+    <div class="sec-head sec-head--split" data-reveal>
+      <div>
+        <p class="sec-eyebrow"><span class="idx">04</span> Experience</p>
+        <h2 class="sec-title">Where the work happened.</h2>
+      </div>
+      <p class="sec-lead">Four years across product teams and agencies — frontend, full-stack, interface design and the infrastructure underneath.</p>
+    </div>
 
-<!-- footer section starts -->
-<section class="footer">
+    <div class="ledger" data-reveal>
+      <div class="ledger__row ledger__row--current">
+        <span class="ledger__years">May 2026 — Present</span>
+        <span class="ledger__co">CoTask IT Solutions</span>
+        <span class="ledger__role">Software Engineer</span>
+        <span class="ledger__type"><span class="ledger__now"><i aria-hidden="true"></i> Current</span></span>
+      </div>
+      <div class="ledger__row">
+        <span class="ledger__years">Apr 2025 — Apr 2026</span>
+        <span class="ledger__co">BrenStone International</span>
+        <span class="ledger__role">Software Development Engineer (SDE-1)</span>
+        <span class="ledger__type">Full-time</span>
+      </div>
+      <div class="ledger__row">
+        <span class="ledger__years">Apr 2025 — Apr 2026</span>
+        <span class="ledger__co">Expertise Station Inc.</span>
+        <span class="ledger__role">Software Development Engineer (SDE-1)</span>
+        <span class="ledger__type">Full-time</span>
+      </div>
+      <div class="ledger__row">
+        <span class="ledger__years">Jan 2025 — May 2025</span>
+        <span class="ledger__co">Inxee Systems Pvt. Ltd.</span>
+        <span class="ledger__role">Full Stack Developer</span>
+        <span class="ledger__type">Full-time</span>
+      </div>
+      <div class="ledger__row">
+        <span class="ledger__years">Nov 2022 — Apr 2023</span>
+        <span class="ledger__co">PIIM</span>
+        <span class="ledger__role">Frontend Developer</span>
+        <span class="ledger__type">Full-time</span>
+      </div>
+    </div>
 
-  <div class="box-container">
+    <div style="margin-top:var(--s-6)" data-reveal>
+      <a href="/experience" class="link-arrow">Full experience detail <svg aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+    </div>
+  </div>
+</section>
 
-      <div class="box">
-          <h3>Rohit Portfolio</h3>
-          <p>Thank you for visiting my personal portfolio website. Connect with me over socials. <br/> <br/> Keep Rising 🚀. Connect with me over live chat!</p>
+<!-- ── Education ───────────────────────────────────────────────────────── -->
+<section class="section" id="education">
+  <div class="shell">
+    <div class="sec-head sec-head--split" data-reveal>
+      <div>
+        <p class="sec-eyebrow"><span class="idx">05</span> Education</p>
+        <h2 class="sec-title">Where it started.</h2>
+      </div>
+      <p class="sec-lead">Formal grounding in computer applications — then everything after that learned by shipping production software.</p>
+    </div>
+
+    <div class="edu">
+      <article class="educard" data-reveal>
+        <div class="educard__media">
+          <img src="/assets/images/educat/thapar-760.jpg" width="760" height="506" loading="lazy" decoding="async"
+               alt="Thapar Institute of Engineering &amp; Technology campus, Patiala">
+          <span class="educard__badge">Completed</span>
+        </div>
+        <div class="educard__body">
+          <span class="mono">2023 — 2025</span>
+          <h3>Master of Computer Applications</h3>
+          <p>Thapar Institute of Engineering &amp; Technology, Patiala</p>
+        </div>
+      </article>
+
+      <article class="educard" data-reveal style="--reveal-delay:110ms">
+        <div class="educard__media">
+          <img src="/assets/images/educat/hpu-760.jpg" width="760" height="304" loading="lazy" decoding="async"
+               alt="Himachal Pradesh University campus">
+          <span class="educard__badge">Completed</span>
+        </div>
+        <div class="educard__body">
+          <span class="mono">2019 — 2022</span>
+          <h3>Bachelor of Computer Applications</h3>
+          <p>Himachal Pradesh University, Shimla</p>
+        </div>
+      </article>
+
+      <article class="educard" data-reveal style="--reveal-delay:220ms">
+        <div class="educard__media">
+          <img src="/assets/images/educat/school-760.jpg" width="760" height="318" loading="lazy" decoding="async"
+               alt="Senior secondary school in Himachal Pradesh">
+          <span class="educard__badge">Completed</span>
+        </div>
+        <div class="educard__body">
+          <span class="mono">2017 — 2019</span>
+          <h3>Senior Secondary</h3>
+          <p>Govt. Senior Secondary School, Chauri — HP Board</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ─────────────────────────────────────────────────────────── -->
+<section class="section contact" id="contact">
+  <div class="shell">
+    <div class="sec-head" data-reveal>
+      <p class="sec-eyebrow"><span class="idx">06</span> Contact</p>
+    </div>
+
+    <div class="contact__grid">
+      <div data-reveal>
+        <h2 class="contact__title">Got something worth building?</h2>
+        <p class="contact__sub">
+          A product idea, a platform that's outgrown its interface, or a dashboard nobody
+          enjoys opening. Let's turn it into something people actually enjoy using.
+        </p>
+
+        <a href="mailto:dogra.rohit2002@gmail.com" class="mailto">dogra.rohit2002@gmail.com</a>
+
+        <div class="contact__links">
+          <a href="https://www.linkedin.com/in/rohit-dogra-96973b240/" target="_blank" rel="noopener" class="btn btn--ghost btn--sm"><svg aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</a>
+          <a href="https://github.com/Rohit-Dogra" target="_blank" rel="noopener" class="btn btn--ghost btn--sm"><svg aria-hidden="true"><use href="#i-github"/></svg> GitHub</a>
+          <a href="https://drive.google.com/file/d/1ZLZzg_Ud8Cz3UlKdbTWCRqYJLlIdopkE/view" target="_blank" rel="noopener" class="btn btn--ghost btn--sm"><svg aria-hidden="true"><use href="#i-file"/></svg> Résumé</a>
+        </div>
       </div>
 
-      <div class="box">
-          <h3>quick links</h3>
-          <a href="#home"><i class="fas fa-chevron-circle-right"></i> home</a>
-          <a href="#about"><i class="fas fa-chevron-circle-right"></i> about</a>
-          <a href="#skills"><i class="fas fa-chevron-circle-right"></i> skills</a>
-          <a href="#education"><i class="fas fa-chevron-circle-right"></i> education</a>
-          <a href="#work"><i class="fas fa-chevron-circle-right"></i> work</a>
-          <a href="#experience"><i class="fas fa-chevron-circle-right"></i> experience</a>
-      </div>
-
-      <div class="box">
-          <h3>contact info</h3>
-          <p> <i class="fas fa-phone"></i>+91 XXX-XXX-XXXX</p>
-          <p> <i class="fas fa-envelope"></i>dogra.rohit2002@gmail.com</p>
-          <p> <i class="fas fa-map-marked-alt"></i>Himachal Pradesh, India-176111</p>
-          <div class="share">
-
-            <a href="https://www.linkedin.com/in/rohit-dogra-96973b240/" class="fab fa-linkedin" target="_blank"></a>
-            <a href="https://github.com/Rohit-Dogra" class="fab fa-github" target="_blank"></a>
-            <a href="mailto:dogra.rohit2002@gmail.com" class="fas fa-envelope" target="_blank"></a>
-            <a href="https://www.facebook.com/rohit.dogra.79827?mibextid=ZbWKwL" class="fab fa-facebook" target="_blank"></a>
-            <a href="https://www.instagram.com/rohit_singh_dogra/profilecard/?igsh=NDVhM2U2MDBrMWI2" class="fab fa-instagram" target="_blank"></a>
+      <form class="form" id="contactForm" novalidate data-reveal="right" style="--reveal-delay:120ms">
+        <div class="form__row">
+          <div class="field">
+            <label for="cf-name">Name <span class="req" aria-hidden="true">*</span></label>
+            <input id="cf-name" name="name" type="text" autocomplete="name" required aria-describedby="err-name" placeholder="Your name">
+            <span class="err" id="err-name"><svg aria-hidden="true" style="width:13px;height:13px"><use href="#i-alert"/></svg> Please tell me your name.</span>
           </div>
-      </div>
+          <div class="field">
+            <label for="cf-email">Email <span class="req" aria-hidden="true">*</span></label>
+            <input id="cf-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="err-email" placeholder="you@company.com">
+            <span class="err" id="err-email"><svg aria-hidden="true" style="width:13px;height:13px"><use href="#i-alert"/></svg> Enter a valid email so I can reply.</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="cf-phone">Phone <span style="color:var(--fg-subtle)">(optional)</span></label>
+          <input id="cf-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+91 00000 00000">
+        </div>
+
+        <div class="field">
+          <label for="cf-message">Project brief <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="cf-message" name="message" required aria-describedby="err-message" placeholder="What are you building, and where are you stuck?"></textarea>
+          <span class="err" id="err-message"><svg aria-hidden="true" style="width:13px;height:13px"><use href="#i-alert"/></svg> A sentence or two is plenty.</span>
+        </div>
+
+        <div class="form__foot">
+          <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+          <button class="btn btn--accent" type="submit" id="formSubmit">
+            <span>Send message</span>
+            <svg class="arrow" aria-hidden="true"><use href="#i-send"/></svg>
+            <span class="spinner" aria-hidden="true"></span>
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
-
-  <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a href="https://www.linkedin.com/in/rohit-dogra-96973b240/"> Rohit Dogra</a></h1>
-
 </section>
-<!-- footer section ends -->
 
+</main>
 
-<!-- scroll top btn -->
-<a href="#home" aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></a>
-<!-- scroll back to top -->
+<!-- ── Footer ──────────────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__grid">
+      <div class="footer__brandcol">
+        <a href="#home" class="brand">
+          <span class="brand__mark" aria-hidden="true">RD</span>
+          <span>Rohit Dogra</span>
+        </a>
+        <p>Frontend engineer and UI/UX designer building SaaS dashboards, internal platforms and commerce experiences.</p>
+      </div>
 
+      <nav class="footer__col" aria-label="Footer">
+        <span class="mono">Navigate</span>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#skills">Expertise</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="/projects">Archive</a>
+      </nav>
 
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
-<!-- jquery cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <div class="footer__col">
+        <span class="mono">Elsewhere</span>
+        <a href="https://www.linkedin.com/in/rohit-dogra-96973b240/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Rohit-Dogra" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.instagram.com/rohit_singh_dogra/profilecard/?igsh=NDVhM2U2MDBrMWI2" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:dogra.rohit2002@gmail.com">Email</a>
+      </div>
+    </div>
 
-<!-- typed.js cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js" integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <p class="footer__wordmark" aria-hidden="true">ROHIT DOGRA</p>
 
-<!-- particle.js links -->
-<script src="./assets/js/particles.min.js"></script>
-<script src="./assets/js/app.js"></script>
+    <div class="footer__bar">
+      <p>© <span id="year">2026</span> Rohit Dogra — All rights reserved</p>
+      <p>Designed &amp; built in Gurugram</p>
+    </div>
+  </div>
+</footer>
 
-<!-- vanilla tilt.js links -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<a href="#home" class="totop" id="toTop" aria-label="Back to top"><svg aria-hidden="true"><use href="#i-arrow-up"/></svg></a>
 
-<!-- scroll reveal anim -->
-<script src="https://unpkg.com/scrollreveal"></script>
-
-<script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
-    ></script>
-
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
-
-<script src="./assets/js/script.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
+<script src="/assets/js/script.js?v=1.1.1" defer></script>
 </body>
 </html>

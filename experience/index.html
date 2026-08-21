@@ -1,165 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link id='favicon' rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-png">
-
-    <title>Experience | Portfolio Rohit Dogra</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16161a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f7f6f3" media="(prefers-color-scheme: light)">
+<title>Experience — Rohit Dogra</title>
+<meta name="description" content="Rohit Dogra's professional experience across product teams and agencies — frontend engineering, full-stack development and interface design.">
+<script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);}catch(e){}})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css?v=1.1.1">
+<link id="favicon" rel="icon" href="/assets/images/favhand.png" type="image/png">
 </head>
-<body oncontextmenu="return false">
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<!-- navbar starts -->
-<header>
-        <a href="/" class="logo"><i class="fab fa-node-js"></i> Rohit-Dogra</a>
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <symbol id="i-arrow-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2.5H7A2.5 2.5 0 0 0 4.5 5v14A2.5 2.5 0 0 0 7 21.5h10a2.5 2.5 0 0 0 2.5-2.5V8l-5.5-5.5Z"/><path d="M14 2.5V8h5.5M8.5 13h7M8.5 17h5"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.6A8.6 8.6 0 1 1 9.4 3.5a6.9 6.9 0 0 0 11.1 11.1Z"/></symbol>
+</svg>
 
-        <div id="menu" class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-            <li><a href="/#home">Home</a></li>
-            <li><a href="/#about">About</a></li>
-            <li><a href="/#skills">Skills</a></li>
-            <li><a href="/#education">Education</a></li>
-            <li><a href="/#work">Work</a></li>
-            <li><a class="active" href="/#experience">Experience</a></li>
-            <li><a href="/#contact">Contact</a></li>
-            </ul>
-        </nav>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="ambient" aria-hidden="true"><div class="ambient__grid"></div><div class="ambient__glow ambient__glow--a"></div><div class="ambient__noise"></div></div>
+
+<header class="nav is-stuck" id="nav">
+  <div class="nav__inner">
+    <a href="/" class="brand" aria-label="Rohit Dogra — home"><span class="brand__mark" aria-hidden="true">RD</span><span>Rohit Dogra<span class="brand__sub"> / Experience</span></span></a>
+    <nav aria-label="Primary">
+      <ul class="nav__links">
+        <li><a href="/#work">Work</a></li><li><a href="/#about">About</a></li>
+        <li><a href="/#skills">Expertise</a></li><li><a href="/#experience">Experience</a></li><li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav__cta"><button class="nav__theme" id="themeToggle" type="button" aria-label="Switch to light theme">
+        <svg class="i-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        <svg class="i-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+      </button>
+      <a href="/#contact" class="btn btn--primary btn--sm">Let's talk <svg aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+      <button class="nav__burger" id="burger" type="button" aria-expanded="false" aria-controls="navSheet" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
 </header>
-<!-- navbar ends -->
 
-<!-- experience section starts -->
-<section class="experience" id="experience">
-
-  <h2 class="heading"><i class="fas fa-briefcase"></i>  Experience</h2>
-  <div class="quote">
-      <span>every experience in your life is being orchestrated to teach you something you need to know to move forward.</span>
-  </div>
-
-  <div class="timeline">
-
-    
-    <div class="container left">
-      <div class="content">
-        <div class="tag">
-          <h2>PIIM</h2>
-        </div>
-        <div class="desc">
-            <h3>Frontend Developer | Full-Time</h3>
-            <p>Nov 2022 - April 2023</p>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="container right">
-      <div class="content">
-        <div class="tag">
-          <h2>Inxee Systems Private Limited</h2>
-        </div>
-        <div class="desc">
-            <h3>Full Stack Developer | Full-Time</h3>
-            <p>Jan 2025 - May 2025</p>
-        </div>
-      </div>
-    </div>
-
-  
-
-  <div class="container left">
-    <div class="content">
-      <div class="tag">
-        <h2>BrenStone International </h2>
-      </div>
-      <div class="desc">
-          <h3>Software Developer Engineer (SDE-1)</h3>
-          <p>April 2025 - April 2026 | Full-Time</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="container right">
-    <div class="content">
-      <div class="tag">
-        <h2>Expertise Station Inc.</h2>
-      </div>
-      <div class="desc">
-        <h3>Software Developer Engineer (SDE-1) </h3>
-          <p>April 2025 - April 2026 | Full-Time</p>
-      </div>
-    </div>
-  </div>
+<div class="nav__sheet" id="navSheet" inert>
+  <ul class="nav__sheet-links">
+    <li><a href="/#work"><span class="num">01</span> Work</a></li>
+    <li><a href="/#about"><span class="num">02</span> About</a></li>
+    <li><a href="/#skills"><span class="num">03</span> Expertise</a></li>
+    <li><a href="/#experience"><span class="num">04</span> Experience</a></li>
+    <li><a href="/#contact"><span class="num">05</span> Contact</a></li>
+  </ul>
+  <div class="nav__sheet-foot"><a href="mailto:dogra.rohit2002@gmail.com" class="link-arrow link-arrow--accent">dogra.rohit2002@gmail.com</a></div>
 </div>
-  <div class="morebtn">
-    <a href="/#experience" class="btn">
-        <i class="fas fa-arrow-left"></i>
-        <span>Back to Home</span>
-  </a>
+
+<main id="main">
+<section class="pagehead">
+  <div class="shell">
+    <a href="/#experience" class="backlink"><svg aria-hidden="true"><use href="#i-arrow-l"/></svg> Back to portfolio</a>
+    <h1>Experience</h1>
+    <p>Four years across product teams and agencies — frontend engineering, full-stack development, interface design and the infrastructure underneath. Twenty-plus live products shipped.</p>
   </div>
-
-</div>
 </section>
-<!-- experience section ends -->
 
-<!-- footer section starts -->
-<section class="footer">
+<section class="section" style="padding-top:0">
+  <div class="shell">
+    <div class="ledger" data-reveal>
 
-  <div class="box-container">
-
-      <div class="box">
-          <h3>Rohit Portfolio</h3>
-          <p>Thank you for visiting my personal portfolio website. Connect with me over socials. <br/> <br/> Keep Rising 🚀. Connect with me over live chat!</p>
+      <div class="ledger__row ledger__row--current">
+        <span class="ledger__years">May 2026 — Present</span>
+        <span class="ledger__co">CoTask IT Solutions</span>
+        <span class="ledger__role">Software Engineer — frontend, product UI and platform work across marketplace and e-commerce products</span>
+        <span class="ledger__type"><span class="ledger__now"><i aria-hidden="true"></i> Current</span></span>
       </div>
 
-      <div class="box">
-          <h3>quick links</h3>
-          <a href="/#home"><i class="fas fa-chevron-circle-right"></i> home</a>
-          <a href="/#about"><i class="fas fa-chevron-circle-right"></i> about</a>
-          <a href="/#skills"><i class="fas fa-chevron-circle-right"></i> skills</a>
-          <a href="/#education"><i class="fas fa-chevron-circle-right"></i> education</a>
-          <a href="/#work"><i class="fas fa-chevron-circle-right"></i> work</a>
-          <a href="/#experience"><i class="fas fa-chevron-circle-right"></i> experience</a>
+      <div class="ledger__row">
+        <span class="ledger__years">Apr 2025 — Apr 2026</span>
+        <span class="ledger__co">BrenStone International</span>
+        <span class="ledger__role">Software Development Engineer (SDE-1) — React front ends, internal tooling and deployment</span>
+        <span class="ledger__type">Full-time</span>
       </div>
 
-      <div class="box">
-          <h3>contact info</h3>
-          <p> <i class="fas fa-phone"></i>+91 780-780-2174</p>
-          <p> <i class="fas fa-envelope"></i>dogra.rohit2002@gmail.com</p>
-          <p> <i class="fas fa-map-marked-alt"></i>Himachal Pradesh, India-176111</p>
-          <div class="share">
-
-            <a href="https://www.linkedin.com/in/rohit-dogra-96973b240/" class="fab fa-linkedin" target="_blank"></a>
-            <a href="https://github.com/Rohit-Dogra" class="fab fa-github" target="_blank"></a>
-            <a href="mailto:dogra.rohit2002@gmail.com" class="fas fa-envelope" target="_blank"></a>
-            <a href="404.html" class="fab fa-twitter" target="_blank"></a>
-            <a href="404.html" class="fab fa-telegram-plane" target="_blank"></a>
-          </div>
+      <div class="ledger__row">
+        <span class="ledger__years">Apr 2025 — Apr 2026</span>
+        <span class="ledger__co">Expertise Station Inc.</span>
+        <span class="ledger__role">Software Development Engineer (SDE-1) — platform features and interface development</span>
+        <span class="ledger__type">Full-time</span>
       </div>
+
+      <div class="ledger__row">
+        <span class="ledger__years">Jan 2025 — May 2025</span>
+        <span class="ledger__co">Inxee Systems Pvt. Ltd.</span>
+        <span class="ledger__role">Full Stack Developer — application development across frontend and backend</span>
+        <span class="ledger__type">Full-time</span>
+      </div>
+
+      <div class="ledger__row">
+        <span class="ledger__years">Nov 2022 — Apr 2023</span>
+        <span class="ledger__co">PIIM</span>
+        <span class="ledger__role">Frontend Developer — website development and WordPress customisation</span>
+        <span class="ledger__type">Full-time</span>
+      </div>
+
+    </div>
+
+    <div class="alsohead" data-reveal><h3>Education</h3><p>Formal grounding, then everything else learned by shipping.</p></div>
+    <div class="ledger" data-reveal>
+      <div class="ledger__row">
+        <span class="ledger__years">2023 — 2025</span>
+        <span class="ledger__co">Thapar Institute of Engineering &amp; Technology</span>
+        <span class="ledger__role">Master of Computer Applications (MCA)</span>
+        <span class="ledger__type">Completed</span>
+      </div>
+      <div class="ledger__row">
+        <span class="ledger__years">2019 — 2022</span>
+        <span class="ledger__co">Himachal Pradesh University</span>
+        <span class="ledger__role">Bachelor of Computer Applications (BCA)</span>
+        <span class="ledger__type">Completed</span>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:var(--s-4);align-items:center;margin-top:clamp(2.5rem,5vw,3.5rem)" data-reveal>
+      <a href="https://drive.google.com/file/d/1ZLZzg_Ud8Cz3UlKdbTWCRqYJLlIdopkE/view" target="_blank" rel="noopener" class="btn btn--primary"><svg aria-hidden="true"><use href="#i-file"/></svg> Download résumé</a>
+      <a href="/#contact" class="btn btn--ghost">Get in touch <svg aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+    </div>
   </div>
-
-  <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a href="https://www.linkedin.com/in/rohit-dogra-96973b240/"> Rohit-Dogra</a></h1>
-
 </section>
-<!-- footer section ends -->
+</main>
 
-<!-- scroll top btn -->
-<a href="#experience" class="fas fa-angle-up" id="scroll-top"></a>
-<!-- scroll back to top -->
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__bar">
+      <p>© <span id="year">2026</span> Rohit Dogra — All rights reserved</p>
+      <a href="/" class="link-arrow">Back to portfolio <svg aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+    </div>
+  </div>
+</footer>
 
-
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
-<!-- jquery cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- scroll reveal anim -->
-<script src="https://unpkg.com/scrollreveal"></script>
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
-
-<script src="./script.js"></script>
-
+<a href="#main" class="totop" id="toTop" aria-label="Back to top"><svg aria-hidden="true"><use href="#i-arrow-up"/></svg></a>
+<script src="/assets/js/script.js?v=1.1.1" defer></script>
 </body>
 </html>

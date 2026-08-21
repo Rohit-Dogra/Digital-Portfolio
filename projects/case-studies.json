@@ -1,0 +1,173 @@
+[
+  {
+    "slug": "growithamazon",
+    "index": "01",
+    "title": "GrowithAmazon",
+    "category": "E-commerce · SaaS Platform",
+    "url": "https://growithamazon.com/",
+    "host": "growithamazon.com",
+    "tagline": "A full-service Amazon and marketplace growth platform — advertising, listing optimisation, catalogue and account management pulled into one professional digital ecosystem.",
+    "role": "Frontend development & UI implementation",
+    "scope": "Marketing platform · Service architecture",
+    "period": "2025 — 2026",
+    "contribution": "Translated a sprawling service catalogue into a navigable, conversion-oriented site architecture.",
+    "tech": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Responsive UI"],
+    "problem": [
+      "Marketplace growth services are hard to sell because they're hard to explain. The offering spanned advertising, SEO, catalogue operations, vendor EDI and seller onboarding — and a brand arriving cold couldn't tell where it fitted or what to even ask for.",
+      "The previous structure mirrored the internal org chart rather than the customer's problem, so every enquiry started with a long clarifying conversation."
+    ],
+    "approach": [
+      "Mapped every service into a hierarchy a seller would actually recognise — by the outcome they want, not by the team that delivers it.",
+      "Designed a component set (service cards, capability tiles, marketplace coverage, proof blocks) so new offerings drop into an existing pattern instead of needing bespoke design.",
+      "Kept exactly one primary action per screen, so the path to a conversation never competes with itself.",
+      "Built mobile-first and shared a single spacing and type scale across every template."
+    ],
+    "solution": [
+      "A multi-section marketing platform with a structured services layer, marketplace coverage, case-study and update surfaces, and one consistent enquiry path running through every page.",
+      "Templates compose from the shared component set, so the visual system holds together as the service list grows."
+    ],
+    "impact": [
+      "Services across eight marketplaces are discoverable from a single, coherent navigation model.",
+      "Non-technical team members publish new service pages without breaking the layout system.",
+      "The same component vocabulary now backs the wider product family, including the analytics dashboard."
+    ],
+    "stack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Component library", "SEO & metadata"]
+  },
+  {
+    "slug": "analytics-dashboard",
+    "index": "02",
+    "title": "Analytics Dashboard",
+    "category": "SaaS · Analytics · Dashboard",
+    "url": "https://dashboard.growithamazon.com/",
+    "host": "dashboard.growithamazon.com",
+    "tagline": "A unified reporting surface for Amazon sellers and agencies — sales, inventory, returns and advertising pulled from a dozen connected platforms into one readable view.",
+    "role": "Frontend engineering & data-interface design",
+    "scope": "Product UI · Data visualisation",
+    "period": "2025 — 2026",
+    "contribution": "Designed the KPI, trend and drill-down patterns that make multi-marketplace data legible at a glance.",
+    "tech": ["Next.js", "React", "TypeScript", "REST APIs", "Data Viz", "Design System"],
+    "problem": [
+      "Sellers were reading their own business across a dozen disconnected consoles — Seller Central, Vendor Central, Amazon Advertising, Google Ads, Noon and more. Every question about performance began with an export and ended in a spreadsheet.",
+      "By the time a number was assembled by hand it was already stale, so decisions were being made on last week's picture."
+    ],
+    "approach": [
+      "Started from the questions, not the data: what does an operator need to know in the first five seconds of opening this?",
+      "Built a strict hierarchy — headline KPIs, then trend, then breakdown, then row-level detail — so every module reads the same way and the eye learns the pattern once.",
+      "Chose chart types by the shape of the question: trend to line, comparison to bar, composition to stacked. Never decoration.",
+      "Designed the loading and empty states first, because a data product spends real time in both.",
+      "Used tabular figures and locale-aware formatting so columns of numbers stay aligned and scannable."
+    ],
+    "solution": [
+      "A modular dashboard covering revenue analytics, inventory intelligence, returns analysis and advertising performance, with role-based workspaces separating multi-brand operators from agency accounts.",
+      "Reserved chart space and consistent number formatting keep the layout stable as data streams in, so nothing jumps while you're reading it."
+    ],
+    "impact": [
+      "Performance questions that used to mean cross-referencing several consoles now resolve on one screen.",
+      "The module pattern absorbs new data sources without a redesign each time one is connected.",
+      "Reporting shifted from manual exports to a live, shareable surface."
+    ],
+    "stack": ["Next.js", "React", "TypeScript", "REST APIs", "Charting", "Role-based UI", "Design tokens"]
+  },
+  {
+    "slug": "workflowhub",
+    "index": "03",
+    "title": "WorkflowHub",
+    "category": "SaaS · Productivity · Workflow",
+    "url": "https://workflowhub.growithamazon.com/",
+    "host": "workflowhub.growithamazon.com",
+    "tagline": "An internal operations platform where tasks, tickets and daily account checks live in one workspace — with separate admin, manager and employee portals.",
+    "role": "Full-stack development & product UI",
+    "scope": "Internal platform · Role-based access",
+    "period": "2025 — 2026",
+    "contribution": "Built the board, task and role-based portal experience, including the Zoho Desk ticket sync surface.",
+    "tech": ["Next.js", "React", "TypeScript", "Node.js", "JWT Auth"],
+    "problem": [
+      "Marketplace operations ran on chat threads, spreadsheets and a separate helpdesk. Nobody could answer \"who owns this and where is it\" without asking three people.",
+      "Recurring per-account checks lived in individual habits rather than anywhere a manager could see, so coverage depended on who was at their desk."
+    ],
+    "approach": [
+      "Modelled the real workflow first — task, owner, account, state — and designed around that instead of around a generic to-do list.",
+      "Gave each role only the surface it needs: admins configure, managers assign, employees execute.",
+      "Offered board, list and calendar views of the same data rather than forcing one mental model on everyone.",
+      "Brought support tickets into the same queue as internal work, so nothing lives in two systems at once."
+    ],
+    "solution": [
+      "A workspace with kanban, list and calendar views, two-way Zoho Desk ticket sync, per-account daily checklists, file management with versioning, and dashboards for velocity and workload.",
+      "Authentication runs on JWT with httpOnly cookies, CSRF protection and encrypted sessions, with granular permissions behind each portal."
+    ],
+    "impact": [
+      "Ownership and status are visible without a status meeting.",
+      "Support tickets and internal work sit in one queue instead of two systems.",
+      "Recurring account checks became a repeatable checklist rather than tribal knowledge."
+    ],
+    "stack": ["Next.js", "React", "TypeScript", "Node.js", "JWT / httpOnly cookies", "Zoho Desk API", "Role-based access"]
+  },
+  {
+    "slug": "cotask",
+    "index": "04",
+    "title": "CoTask",
+    "category": "Agency · Digital Growth",
+    "url": "https://cotasks.com/",
+    "host": "cotasks.com",
+    "tagline": "The public face of a technology and digital-growth agency — marketplace management, performance marketing and e-commerce development, all made legible to a first-time visitor.",
+    "role": "UI/UX design & frontend development",
+    "scope": "Brand site · Conversion design",
+    "period": "2026",
+    "contribution": "Designed the service architecture and conversion-oriented layouts, and built the responsive frontend.",
+    "tech": ["Next.js", "React", "Tailwind CSS", "Figma", "SEO"],
+    "problem": [
+      "The agency does a lot — seven marketplaces, five marketing channels, Shopify builds, vendor EDI account work. Presented as a flat list, that breadth read as unfocused rather than capable.",
+      "Credentials and partnerships were scattered as badges instead of building a case."
+    ],
+    "approach": [
+      "Grouped services by the outcome a client wants, not by the internal team that delivers them.",
+      "Gave credentials and partnerships a dedicated proof layer where they reinforce each other.",
+      "Kept one low-friction consultation path, repeated at consistent intervals down the page.",
+      "Designed in Figma first, then built the same components in code so nothing drifted between file and production."
+    ],
+    "solution": [
+      "A modern, conversion-oriented marketing site: outcome-grouped service tiles, marketplace coverage, a credentials strip, a blog surface, and a single recurring enquiry action.",
+      "Built responsive-first on a shared component set so new service pages inherit the system."
+    ],
+    "impact": [
+      "A broad service range now reads as focused expertise rather than a menu.",
+      "Visitors can self-identify their need before ever speaking to sales.",
+      "New service pages drop into an existing pattern instead of needing bespoke design."
+    ],
+    "stack": ["Next.js", "React", "Tailwind CSS", "Figma", "Responsive UI", "SEO & metadata"]
+  },
+  {
+    "slug": "paris-corner",
+    "index": "05",
+    "title": "Paris Corner UAE",
+    "category": "E-commerce · Luxury D2C",
+    "url": "https://pariscorner.ae/",
+    "host": "pariscorner.ae",
+    "tagline": "A premium Shopify storefront for a UAE fragrance house carrying nine sub-brands — where the product has to carry the page and the interface has to get out of its way.",
+    "role": "Shopify theme development & storefront UX",
+    "scope": "Storefront · Theme architecture",
+    "period": "2025 — 2026",
+    "contribution": "Built the storefront end to end in Liquid — product presentation, collection browsing and the visual language that keeps a nine-brand catalogue feeling like one house.",
+    "tech": ["Shopify", "Liquid", "JavaScript", "CSS", "Theme architecture"],
+    "problem": [
+      "Nine sub-brands, hundreds of SKUs and heavy combo merchandising were all competing for the same attention. Shoppers browsing by scent and shoppers browsing by brand kept hitting dead ends.",
+      "Every merchandising change was a developer ticket, which meant the storefront moved slower than the marketing calendar."
+    ],
+    "approach": [
+      "Let the photography lead: dark, quiet surfaces and thin gold rules instead of decorative chrome.",
+      "Made brand and scent both first-class browsing paths rather than nesting one inside the other.",
+      "Built the theme as composable Liquid sections, so merchandising can be rearranged without touching code.",
+      "Kept price, size and combo savings on one predictable line so comparison takes no effort."
+    ],
+    "solution": [
+      "A restrained luxury storefront built entirely in Liquid on Shopify: a centred wordmark identity, editorial hero banners, brand and collection landing surfaces, and combo merchandising blocks.",
+      "The product card stays readable whether it holds a single bottle or a bundle, which is what lets one grid serve the whole catalogue."
+    ],
+    "impact": [
+      "Nine sub-brands read as one house rather than nine competing storefronts.",
+      "Shoppers move brand → scent → bundle without leaving the browsing flow.",
+      "Merchandising changes ship through Shopify sections rather than developer tickets."
+    ],
+    "stack": ["Shopify", "Liquid", "Shopify Sections", "JavaScript", "CSS", "Responsive UI"]
+  }
+]

@@ -1,251 +1,359 @@
-$(document).ready(function () {
+/* ==========================================================================
+   Rohit Dogra — Portfolio interactions
+   Vanilla ES2019+. No framework, no jQuery. All motion respects
+   prefers-reduced-motion and everything degrades to a working static page.
+   ========================================================================== */
+(function () {
+  'use strict';
 
-    $('#menu').click(function () {
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var fine    = window.matchMedia('(hover: hover) and (pointer: fine)');
+  var $  = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+
+  /* rAF-throttled scroll dispatcher — one listener, many subscribers. */
+  var subs = [], ticking = false;
+  function onScroll(fn) { subs.push(fn); }
+  function tick() {
+    ticking = false;
+    var y = window.scrollY || window.pageYOffset;
+    for (var i = 0; i < subs.length; i++) subs[i](y);
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(tick); }
+  }, { passive: true });
+
+  /* ── Entrance ───────────────────────────────────────────────────────── */
+  requestAnimationFrame(function () { document.documentElement.classList.add('is-loaded'); });
+
+  /* ── Theme ──────────────────────────────────────────────────────────── */
+  /* The stored preference is applied by an inline head script before first
+     paint; this only handles switching and keeps the control's label honest. */
+  (function () {
+    var root   = document.documentElement;
+    var toggle = $('#themeToggle');
+    var system = window.matchMedia('(prefers-color-scheme: light)');
+
+    function current() {
+      var set = root.getAttribute('data-theme');
+      if (set === 'light' || set === 'dark') return set;
+      return system.matches ? 'light' : 'dark';
+    }
+
+    function label() {
+      if (!toggle) return;
+      var next = current() === 'dark' ? 'light' : 'dark';
+      toggle.setAttribute('aria-label', 'Switch to ' + next + ' theme');
+      toggle.setAttribute('title', 'Switch to ' + next + ' theme');
+    }
+
+    function apply(theme) {
+      root.setAttribute('data-theme', theme);
+      try { localStorage.setItem('theme', theme); } catch (e) { /* private mode */ }
+      label();
+    }
+
+    label();
+
+    if (toggle) {
+      toggle.addEventListener('click', function () {
+        if (!reduced.matches) {
+          root.classList.add('theme-shifting');
+          window.setTimeout(function () { root.classList.remove('theme-shifting'); }, 360);
+        }
+        apply(current() === 'dark' ? 'light' : 'dark');
+      });
+    }
+
+    // Follow the OS only while the visitor has not chosen for themselves.
+    var onSystem = function () { if (!root.getAttribute('data-theme')) label(); };
+    if (system.addEventListener) system.addEventListener('change', onSystem);
+    else if (system.addListener) system.addListener(onSystem);
+  })();
+
+  /* ── Footer year ────────────────────────────────────────────────────── */
+  var yearEl = $('#year');
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  /* ── Scroll progress ────────────────────────────────────────────────── */
+  var bar = $('#progress');
+  if (bar) {
+    onScroll(function (y) {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(y / max, 1) : 0) + ')';
+    });
+  }
+
+  /* ── Nav: stuck state, sliding pill, scroll spy ─────────────────────── */
+  var nav      = $('#nav');
+  var navList  = $('#navLinks');
+  var pill     = navList ? $('.nav__pill', navList) : null;
+  var navAs    = navList ? $$('a', navList) : [];
+  var sections = navAs
+    .map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); })
+    .filter(Boolean);
+
+  function movePill(a) {
+    if (!pill || !a) return;
+    pill.style.width = a.offsetWidth + 'px';
+    pill.style.transform = 'translateX(' + a.offsetLeft + 'px)';
+    pill.classList.add('is-on');
+  }
+
+  var activeId = '';
+  function spy(y) {
+    if (nav) nav.classList.toggle('is-stuck', y > 24);
+
+    // The last section whose top has crossed the line 38% down the viewport
+    // wins. Above the first section — i.e. in the hero — nothing is active.
+    var line = y + window.innerHeight * 0.38, current = null;
+    for (var i = 0; i < sections.length; i++) {
+      if (sections[i].offsetTop <= line) current = sections[i];
+    }
+    // Near the very bottom, always credit the last section.
+    if (y + window.innerHeight >= document.documentElement.scrollHeight - 4) {
+      current = sections[sections.length - 1];
+    }
+    var id = current ? current.id : '';
+    if (id === activeId) return;
+    activeId = id;
+
+    var match = null;
+    navAs.forEach(function (a) {
+      var on = a.getAttribute('href') === '#' + activeId;
+      a.classList.toggle('is-active', on);
+      if (on) match = a;
+    });
+    if (match) movePill(match); else if (pill) pill.classList.remove('is-on');
+  }
+  if (sections.length) { onScroll(spy); spy(window.scrollY || 0); }
+
+  // Hovering previews the pill; leaving returns it to the active link.
+  if (navList && fine.matches) {
+    navAs.forEach(function (a) {
+      a.addEventListener('mouseenter', function () { movePill(a); });
+    });
+    navList.addEventListener('mouseleave', function () {
+      movePill($('a.is-active', navList));
+    });
+  }
+  window.addEventListener('resize', function () {
+    movePill(navList ? $('a.is-active', navList) : null);
+  });
+
+  /* ── Mobile sheet ───────────────────────────────────────────────────── */
+  var burger = $('#burger');
+  var sheet  = $('#navSheet');
+  if (burger && sheet) {
+    var inertables = [$('#main'), $('footer')].filter(Boolean);
+
+    function setSheet(open) {
+      burger.setAttribute('aria-expanded', String(open));
+      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      sheet.classList.toggle('is-open', open);
+      document.body.classList.toggle('is-locked', open);
+      if (open) sheet.removeAttribute('inert'); else sheet.setAttribute('inert', '');
+      inertables.forEach(function (el) {
+        if (open) el.setAttribute('inert', ''); else el.removeAttribute('inert');
+      });
+      // Stagger the links in, then hand focus to the first one.
+      $$('.nav__sheet-links a', sheet).forEach(function (a, i) {
+        a.style.transitionDelay = open ? (120 + i * 55) + 'ms' : '0ms';
+      });
+      if (open) {
+        var first = $('.nav__sheet-links a', sheet);
+        if (first) setTimeout(function () { first.focus(); }, reduced.matches ? 0 : 420);
+      } else {
+        burger.focus();
+      }
+    }
+
+    burger.addEventListener('click', function () {
+      setSheet(burger.getAttribute('aria-expanded') !== 'true');
+    });
+    $$('a', sheet).forEach(function (a) {
+      a.addEventListener('click', function () { setSheet(false); });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && burger.getAttribute('aria-expanded') === 'true') setSheet(false);
+    });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 940 && burger.getAttribute('aria-expanded') === 'true') setSheet(false);
+    });
+  }
+
+  /* ── Reveal on scroll ───────────────────────────────────────────────── */
+  var revealables = $$('[data-reveal]');
+  if (reduced.matches || !('IntersectionObserver' in window)) {
+    revealables.forEach(function (el) { el.classList.add('is-in'); });
+    $$('.frame').forEach(function (el) { el.classList.add('is-seen'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        en.target.classList.add('is-in');
+        io.unobserve(en.target);
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+    revealables.forEach(function (el) { io.observe(el); });
+
+    // Mockups animate their charts once, when the frame is genuinely on screen.
+    var frameIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        en.target.classList.add('is-seen');
+        frameIo.unobserve(en.target);
+      });
+    }, { threshold: 0.25 });
+    $$('.frame').forEach(function (el) { frameIo.observe(el); });
+  }
+
+  /* ── Magnetic "Visit" badge inside project frames ───────────────────── */
+  if (fine.matches && !reduced.matches) {
+    $$('.frame').forEach(function (frame) {
+      var badge = $('.frame__badge', frame);
+      if (!badge) return;
+      var pending = false, mx = 0, my = 0;
+
+      frame.addEventListener('pointerenter', function () { frame.classList.add('is-tracking'); });
+      frame.addEventListener('pointerleave', function () { frame.classList.remove('is-tracking'); });
+      frame.addEventListener('pointermove', function (e) {
+        var r = frame.getBoundingClientRect();
+        mx = e.clientX - r.left;
+        my = e.clientY - r.top;
+        if (pending) return;
+        pending = true;
+        requestAnimationFrame(function () {
+          pending = false;
+          badge.style.transform = 'translate(calc(-50% + ' + mx + 'px), calc(-50% + ' + my + 'px)) scale(1)';
+        });
+      });
+    });
+  }
+
+  /* ── Case study drawers ─────────────────────────────────────────────── */
+  $$('.case-toggle').forEach(function (btn) {
+    var panel = document.getElementById(btn.getAttribute('aria-controls'));
+    if (!panel) return;
+    var wrap  = panel.closest('.case-wrap');
+    var label = $('.case-toggle__label', btn);
+    var title = $('.proj__title', btn.closest('.proj'));
+
+    panel.setAttribute('role', 'region');
+    panel.setAttribute('aria-label', 'Case study' + (title ? ' — ' + title.textContent.trim() : ''));
+
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      wrap.classList.toggle('is-open', !open);
+      if (label) label.textContent = open ? 'Case study' : 'Close case study';
+    });
+  });
+
+  /* ── Expertise tabs ─────────────────────────────────────────────────── */
+  var tabs = $$('.tab');
+  var grid = $('#skillGrid');
+  if (tabs.length && grid) {
+    var cols = $$('.skillcol', grid);
+
+    function select(tab) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute('aria-selected', String(on));
+        t.setAttribute('tabindex', on ? '0' : '-1');
+      });
+      var cat = tab.dataset.cat;
+      grid.classList.toggle('is-filtered', cat !== 'all');
+      cols.forEach(function (c) { c.classList.toggle('is-on', c.dataset.cat === cat); });
+    }
+
+    tabs.forEach(function (tab, i) {
+      tab.setAttribute('tabindex', tab.getAttribute('aria-selected') === 'true' ? '0' : '-1');
+      tab.addEventListener('click', function () { select(tab); });
+      tab.addEventListener('keydown', function (e) {
+        var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (!d) return;
+        e.preventDefault();
+        var next = tabs[(i + d + tabs.length) % tabs.length];
+        next.focus(); select(next);
+      });
+    });
+  }
+
+  /* ── Back to top ────────────────────────────────────────────────────── */
+  var toTop = $('#toTop');
+  if (toTop) onScroll(function (y) { toTop.classList.toggle('is-on', y > 700); });
+
+  /* ── Contact form ───────────────────────────────────────────────────── */
+  var form = $('#contactForm');
+  if (form) {
+    var statusEl = $('#formStatus');
+    var submit   = $('#formSubmit');
+    var EMAILJS  = { user: 'user_TTDmetQLYgWCLzHTDgqxm', service: 'contact_service', template: 'template_contact' };
+
+    function fieldOf(input) { return input.closest('.field'); }
+
+    function validate(input) {
+      var wrap = fieldOf(input);
+      if (!wrap) return true;
+      var val = input.value.trim();
+      var ok  = input.required
+        ? (val !== '' && input.checkValidity())
+        : (val === '' || input.checkValidity());
+      wrap.classList.toggle('has-error', !ok);
+      input.setAttribute('aria-invalid', ok ? 'false' : 'true');
+      return ok;
+    }
+
+    // Validate on blur, never on keystroke. Clear the error as soon as it's fixed.
+    $$('input, textarea', form).forEach(function (input) {
+      input.addEventListener('blur', function () { validate(input); });
+      input.addEventListener('input', function () {
+        if (fieldOf(input).classList.contains('has-error')) validate(input);
+      });
     });
 
-    $(window).on('scroll load', function () {
-        $('#menu').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
+    function say(msg, state) {
+      if (!statusEl) return;
+      statusEl.textContent = msg;
+      if (state) statusEl.setAttribute('data-state', state);
+      else statusEl.removeAttribute('data-state');
+    }
 
-        if (window.scrollY > 60) {
-            document.querySelector('#scroll-top').classList.add('active');
-        } else {
-            document.querySelector('#scroll-top').classList.remove('active');
-        }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
 
-        // scroll spy
-        $('section').each(function () {
-            let height = $(this).height();
-            let offset = $(this).offset().top - 200;
-            let top = $(window).scrollTop();
-            let id = $(this).attr('id');
+      var inputs  = $$('input, textarea', form);
+      var invalid = inputs.filter(function (i) { return !validate(i); });
+      if (invalid.length) {
+        say(invalid.length + ' field' + (invalid.length > 1 ? 's need' : ' needs') + ' attention.', 'err');
+        invalid[0].focus();
+        return;
+      }
 
-            if (top > offset && top < offset + height) {
-                $('.navbar ul li a').removeClass('active');
-                $('.navbar').find(`[href="#${id}"]`).addClass('active');
-            }
+      if (typeof window.emailjs === 'undefined') {
+        say('Mail service unavailable — email me directly at dogra.rohit2002@gmail.com.', 'err');
+        return;
+      }
+
+      submit.setAttribute('data-loading', 'true');
+      submit.setAttribute('aria-busy', 'true');
+      say('Sending…');
+
+      try { window.emailjs.init(EMAILJS.user); } catch (err) { /* already initialised */ }
+
+      window.emailjs.sendForm(EMAILJS.service, EMAILJS.template, form)
+        .then(function () {
+          form.reset();
+          say('Thanks — message sent. I usually reply within a day.', 'ok');
+        })
+        .catch(function () {
+          say('That didn’t send. Email me directly at dogra.rohit2002@gmail.com.', 'err');
+        })
+        .then(function () {
+          submit.removeAttribute('data-loading');
+          submit.removeAttribute('aria-busy');
         });
     });
-
-    // smooth scrolling
-    $('a[href*="#"]').on('click', function (e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $($(this).attr('href')).offset().top,
-        }, 500, 'linear')
-    });
-
-    // <!-- emailjs to mail contact form data -->
-    $("#contact-form").submit(function (event) {
-        emailjs.init("user_TTDmetQLYgWCLzHTDgqxm");
-
-        emailjs.sendForm('contact_service', 'template_contact', '#contact-form')
-            .then(function (response) {
-                console.log('SUCCESS!', response.status, response.text);
-                document.getElementById("contact-form").reset();
-                alert("Form Submitted Successfully");
-            }, function (error) {
-                console.log('FAILED...', error);
-                alert("Form Submission Failed! Try Again");
-            });
-        event.preventDefault();
-    });
-    // <!-- emailjs to mail contact form data -->
-
-});
-
-document.addEventListener('visibilitychange',
-    function () {
-        if (document.visibilityState === "visible") {
-            document.title = "Portfolio | Rohit Dogra";
-            $("#favicon").attr("href", "assets/images/WhatsApp Image 2024-12-16 at 23.39.07_ca1fe4e6.jpg");
-        }
-        else {
-            document.title = "Come Back To Portfolio";
-            $("#favicon").attr("href", "assets/images/business.png");
-        }
-    });
-
-
-// <!-- typed js effect starts -->
-var typed = new Typed(".typing-text", {
-    strings: [" Full Stack Development", "Frontend Development", "Backend Development", "Web Designing", "Wordpress", "Web Development"],
-    loop: true,
-    typeSpeed: 50,
-    backSpeed: 25,
-    backDelay: 500,
-});
-// <!-- typed js effect ends -->
-
-async function fetchData(type = "skills") {
-    let response
-    type === "skills" ?
-        response = await fetch("skills.json")
-        :
-        response = await fetch("./projects/projects.json")
-    const data = await response.json();
-    return data;
-}
-
-function showSkills(skills) {
-    let skillsContainer = document.getElementById("skillsContainer");
-    let skillHTML = "";
-    skills.forEach(skill => {
-        skillHTML += `
-        <div class="bar">
-              <div class="info">
-                <img src=${skill.icon} alt="skill" />
-                <span>${skill.name}</span>
-              </div>
-            </div>`
-    });
-    skillsContainer.innerHTML = skillHTML;
-}
-
-function showProjects(projects) {
-    let projectsContainer = document.querySelector("#work .box-container");
-    let projectHTML = "";
-    projects.slice(0, 10).filter(project => project.category != "android").forEach(project => {
-        projectHTML += `
-        <div class="box tilt">
-      <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
-      <div class="content">
-        <div class="tag">
-        <h3>${project.name}</h3>
-        </div>
-        <div class="desc">
-          <p>${project.desc}</p>
-          <div class="btns">
-            <a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>`
-    });
-    projectsContainer.innerHTML = projectHTML;
-
-    // <!-- tilt js effect starts -->
-    VanillaTilt.init(document.querySelectorAll(".tilt"), {
-        max: 15,
-    });
-    // <!-- tilt js effect ends -->
-
-    /* ===== SCROLL REVEAL ANIMATION ===== */
-    const srtop = ScrollReveal({
-        origin: 'top',
-        distance: '80px',
-        duration: 1000,
-        reset: true
-    });
-
-    /* SCROLL PROJECTS */
-    srtop.reveal('.work .box', { interval: 200 });
-
-}
-
-fetchData().then(data => {
-    showSkills(data);
-});
-
-fetchData("projects").then(data => {
-    showProjects(data);
-});
-
-// <!-- tilt js effect starts -->
-VanillaTilt.init(document.querySelectorAll(".tilt"), {
-    max: 15,
-});
-// <!-- tilt js effect ends -->
-
-
-// pre loader start
-// function loader() {
-//     document.querySelector('.loader-container').classList.add('fade-out');
-// }
-// function fadeOut() {
-//     setInterval(loader, 500);
-// }
-// window.onload = fadeOut;
-// pre loader end
-
-// disable developer mode
-document.onkeydown = function (e) {
-    if (e.keyCode == 123) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-        return false;
-    }
-}
-
-// Start of Tawk.to Live Chat
-var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-(function () {
-    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/60df10bf7f4b000ac03ab6a8/1f9jlirg6';
-    s1.charset = 'UTF-8';
-    s1.setAttribute('crossorigin', '*');
-    s0.parentNode.insertBefore(s1, s0);
+  }
 })();
-// End of Tawk.to Live Chat
-
-
-/* ===== SCROLL REVEAL ANIMATION ===== */
-const srtop = ScrollReveal({
-    origin: 'top',
-    distance: '80px',
-    duration: 1000,
-    reset: true
-});
-
-/* SCROLL HOME */
-srtop.reveal('.home .content h3', { delay: 200 });
-srtop.reveal('.home .content p', { delay: 200 });
-srtop.reveal('.home .content .btn', { delay: 200 });
-
-srtop.reveal('.home .image', { delay: 400 });
-srtop.reveal('.home .linkedin', { interval: 600 });
-srtop.reveal('.home .github', { interval: 800 });
-srtop.reveal('.home .twitter', { interval: 1000 });
-srtop.reveal('.home .telegram', { interval: 600 });
-srtop.reveal('.home .instagram', { interval: 600 });
-srtop.reveal('.home .dev', { interval: 600 });
-
-/* SCROLL ABOUT */
-srtop.reveal('.about .content h3', { delay: 200 });
-srtop.reveal('.about .content .tag', { delay: 200 });
-srtop.reveal('.about .content p', { delay: 200 });
-srtop.reveal('.about .content .box-container', { delay: 200 });
-srtop.reveal('.about .content .resumebtn', { delay: 200 });
-
-
-/* SCROLL SKILLS */
-srtop.reveal('.skills .container', { interval: 200 });
-srtop.reveal('.skills .container .bar', { delay: 400 });
-
-/* SCROLL EDUCATION */
-srtop.reveal('.education .box', { interval: 200 });
-
-/* SCROLL PROJECTS */
-srtop.reveal('.work .box', { interval: 200 });
-
-/* SCROLL EXPERIENCE */
-srtop.reveal('.experience .timeline', { delay: 400 });
-srtop.reveal('.experience .timeline .container', { interval: 400 });
-
-/* SCROLL CONTACT */
-srtop.reveal('.contact .container', { delay: 400 });
-srtop.reveal('.contact .container .form-group', { delay: 400 });

@@ -1,19 +1,133 @@
 [
-      {
+  {
+    "name": "GrowithAmazon",
+    "desc": "Full-service Amazon and marketplace growth platform \u2014 PPC, listing optimisation, catalogue and account management in one ecosystem.",
+    "image": "",
+    "category": "product",
+    "tech": "Next.js \u00b7 React \u00b7 TypeScript \u00b7 Tailwind",
+    "featured": true,
+    "links": {
+      "view": "https://growithamazon.com/",
+      "code": ""
+    }
+  },
+  {
+    "name": "GrowithAmazon Analytics Dashboard",
+    "desc": "Unified analytics for Amazon sellers and agencies \u2014 sales, inventory, returns and ad performance from a dozen connected platforms.",
+    "image": "",
+    "category": "product",
+    "tech": "Next.js \u00b7 React \u00b7 TypeScript \u00b7 Data Viz",
+    "featured": true,
+    "links": {
+      "view": "https://dashboard.growithamazon.com/",
+      "code": ""
+    }
+  },
+  {
+    "name": "WorkflowHub",
+    "desc": "Internal operations platform \u2014 tasks, tickets and daily account checks with separate admin, manager and employee portals.",
+    "image": "",
+    "category": "product",
+    "tech": "Next.js \u00b7 Node.js \u00b7 TypeScript \u00b7 JWT",
+    "featured": true,
+    "links": {
+      "view": "https://workflowhub.growithamazon.com/",
+      "code": ""
+    }
+  },
+  {
+    "name": "CoTask",
+    "desc": "Digital growth agency site \u2014 marketplace management, performance marketing and e-commerce development made legible to a first-time visitor.",
+    "image": "",
+    "category": "product",
+    "tech": "Next.js \u00b7 React \u00b7 Tailwind CSS",
+    "featured": true,
+    "links": {
+      "view": "https://cotasks.com/",
+      "code": ""
+    }
+  },
+  {
+    "name": "Paris Corner UAE",
+    "desc": "Premium Shopify storefront for a UAE fragrance house carrying nine sub-brands, built end to end in Liquid.",
+    "image": "",
+    "category": "product",
+    "tech": "Shopify \u00b7 Liquid \u00b7 JavaScript \u00b7 CSS",
+    "featured": true,
+    "links": {
+      "view": "https://pariscorner.ae/",
+      "code": ""
+    }
+  },
+  {
+    "name": "Naukari Navigator",
+    "desc": "AI-powered recruitment and applicant tracking platform for employers, recruiters and HR teams.",
+    "image": "",
+    "category": "product",
+    "tech": "React \u00b7 Vite \u00b7 AWS S3",
+    "featured": true,
+    "links": {
+      "view": "https://naukarinavigator.com/",
+      "code": ""
+    }
+  },
+  {
+    "name": "BrenStone International",
+    "desc": "Corporate site for a business consulting firm working in mergers, acquisitions and technology transfer.",
+    "image": "",
+    "category": "product",
+    "tech": "React \u00b7 Vite \u00b7 Hostinger",
+    "featured": true,
+    "links": {
+      "view": "https://brenstoneinternational.com/",
+      "code": ""
+    }
+  },
+  {
+    "name": "MCP Data Servers",
+    "desc": "Internal Model Context Protocol servers that fetch live marketplace and analytics data and surface it inside the tools that consume it.",
+    "image": "",
+    "category": "product",
+    "tech": "Node.js \u00b7 MCP \u00b7 REST APIs",
+    "featured": true,
+    "internal": true,
+    "links": {
+      "view": "",
+      "code": ""
+    }
+  },
+  {
+    "name": "Marketplace Ops Panels",
+    "desc": "Internal admin panels for marketplace operations \u2014 catalogue actions, account checks and reporting for in-house teams.",
+    "image": "",
+    "category": "product",
+    "tech": "Next.js \u00b7 Node.js \u00b7 VPS",
+    "featured": true,
+    "internal": true,
+    "links": {
+      "view": "",
+      "code": ""
+    }
+  },
+  {
     "name": "Expertise-Station",
     "desc": "Expertise Station is a dynamic platform that connects users with top industry experts across domains like Business Strategy, HR, Operations, and more through personalized sessions and real-time networking.",
     "image": "expertise",
     "category": "basicweb",
+    "tech": "",
+    "featured": false,
     "links": {
       "view": "https://www.expertisestation.com/",
-      "code": "404.html"
+      "code": ""
     }
   },
- {
+  {
     "name": "Jungle Odyssey",
     "desc": "Adventure, showcasing Amazon rainforest exploration with features like navigation, event highlights, and tour information.",
     "image": "amazon",
     "category": "basicweb",
+    "tech": "",
+    "featured": false,
     "links": {
       "view": "https://amazon-travel.netlify.app/",
       "code": "https://github.com/Rohit-Dogra/Jungle-Template"
@@ -24,8 +138,10 @@
     "desc": "Road safety concerns have led to smart systems that make driving safer and easier.",
     "image": "lane",
     "category": "basicweb",
+    "tech": "",
+    "featured": false,
     "links": {
-      "view": "404.html",
+      "view": "",
       "code": "https://github.com/Rohit-Dogra/Road-Detection-System-main"
     }
   },
@@ -33,7 +149,9 @@
     "name": "Travel-Ease",
     "desc": "A comprehensive travel website offering booking, emergency support, and all-in-one travel management features.",
     "image": "travel",
-    "category": "mern stack",
+    "category": "mern",
+    "tech": "",
+    "featured": false,
     "links": {
       "view": "https://kzmgyheqt6ea8pa5ps24.lite.vusercontent.net/",
       "code": "https://github.com/Rohit-Dogra/Travel-MERN-"
@@ -43,9 +161,11 @@
     "name": "Bulb Control Project",
     "desc": "This project is a React-based web application that controls bulbs remotely. It uses Material-UI for the UI, WebSockets for real-time updates, and Node.js as the backend.",
     "image": "switch",
-    "category": "mern stack",
+    "category": "mern",
+    "tech": "",
+    "featured": false,
     "links": {
-      "view": "404.html",
+      "view": "",
       "code": "https://github.com/Rohit-Dogra/Smart-Bulb-Control"
     }
   },
@@ -53,7 +173,9 @@
     "name": "Expense-Management-System",
     "desc": "The Expense Management System is a web-based application designed to assist users in tracking and managing their daily expenses.To create a scalable, responsive, and user-friendly application.",
     "image": "expense",
-    "category": "mern stack",
+    "category": "mern",
+    "tech": "",
+    "featured": false,
     "links": {
       "view": "https://expense-tracker-app-three-beryl.vercel.app/",
       "code": "https://github.com/Rohit-Dogra/Expense-Management-System-using-MERN-Stack"
@@ -63,31 +185,36 @@
     "name": "Netflix-Clone",
     "desc": "React Native App with the same style as Netflix for iOS. I released a serie of videos on Youtube with a walkthrough explaining every part of this application.",
     "image": "netflix",
-    "category": "mern stack",
+    "category": "mern",
+    "tech": "",
+    "featured": false,
     "links": {
-      "view": "404.html",
+      "view": "",
       "code": "https://github.com/Rohit-Dogra/React-Native-Netflix"
     }
   },
   {
-    "name": "Another Portfolio ",
+    "name": "Another Portfolio",
     "desc": "compilation of academic and professional materials that exemplifies your beliefs, skills, qualification, education and experiences.",
     "image": "port",
     "category": "basicweb",
+    "tech": "",
+    "featured": false,
     "links": {
       "view": "https://full-stack-portfolio-rotu.netlify.app/",
       "code": "https://github.com/Rohit-Dogra/responsive-portfolio"
     }
   },
- 
- {
+  {
     "name": "Pet-Site template",
     "desc": "We understand that pets are more than companions, they are family members who deserve love, attention, and a safe environment.",
     "image": "petai",
     "category": "basicweb",
+    "tech": "",
+    "featured": false,
     "links": {
       "view": "https://petpatch.nicepage.io/",
-      "code": "#"
+      "code": ""
     }
   },
   {
@@ -95,6 +222,8 @@
     "desc": "We understand that pets are more than companions, they are family members who deserve love, attention, and a safe environment.",
     "image": "Petpatch",
     "category": "basicweb",
+    "tech": "",
+    "featured": false,
     "links": {
       "view": "https://pet-patch.netlify.app/",
       "code": "https://github.com/Rohit-Dogra/Pet-care-Website"
@@ -102,9 +231,11 @@
   },
   {
     "name": "University Website Template",
-    "desc": " is a comprehensive and user-friendly design that highlights essential information like academics, admissions, campus life, and contact details.",
+    "desc": "is a comprehensive and user-friendly design that highlights essential information like academics, admissions, campus life, and contact details.",
     "image": "uni",
     "category": "basicweb",
+    "tech": "",
+    "featured": false,
     "links": {
       "view": "https://university-templates.netlify.app/",
       "code": "https://github.com/Rohit-Dogra/university-template"
@@ -112,11 +243,13 @@
   },
   {
     "name": "Restaurant-Template",
-    "desc": "It featuring a modern layout with navigation links to explore the menu, make reservations, and contact the team. ",
+    "desc": "It featuring a modern layout with navigation links to explore the menu, make reservations, and contact the team.",
     "image": "res",
     "category": "basicweb",
+    "tech": "",
+    "featured": false,
     "links": {
-      "view": "404.html",
+      "view": "",
       "code": "https://github.com/Rohit-Dogra/Restaurant_Template"
     }
   },
@@ -125,37 +258,32 @@
     "desc": "This letter is built with heart and a dash of brilliance, just like a conversation with your best friend",
     "image": "cov",
     "category": "basicweb",
+    "tech": "",
+    "featured": false,
     "links": {
       "view": "https://cover-letterss.netlify.app/",
       "code": "https://github.com/Rohit-Dogra/Cover-letter2.0"
     }
   },
- 
-  {
-    "name": "Heart-Slide Template",
-    "desc": "This letter is built with heart and a dash of brilliance, just like a conversation with your loved ones",
-    "image": "heart",
-    "category": "basicweb",
-    "links": {
-      "view": "404.html",
-      "code": "#"
-    }
-  },
   {
     "name": "Hotel-Website-Template",
-    "desc": " is designed to offer a seamless and luxurious user experience,features like elegant room, amenities and booking. With dedicated section for services, dining and contact info.",
+    "desc": "is designed to offer a seamless and luxurious user experience,features like elegant room, amenities and booking. With dedicated section for services, dining and contact info.",
     "image": "hot",
     "category": "basicweb",
+    "tech": "",
+    "featured": false,
     "links": {
-      "view": "404.html",
+      "view": "",
       "code": "https://github.com/Rohit-Dogra/Hotel-website"
     }
   },
   {
-    "name": " Langauge Port",
+    "name": "Langauge Port",
     "desc": "This personal portfolio website template showcases your skills and expertise in web development or other professional fields, with sections for showcasing project",
     "image": "lan",
     "category": "basicweb",
+    "tech": "",
+    "featured": false,
     "links": {
       "view": "https://full-stack-portfolio-rotu.netlify.app/",
       "code": "https://github.com/Rohit-Dogra/responsive-portfolio"
@@ -163,22 +291,14 @@
   },
   {
     "name": "Will-you-my-buddy",
-    "desc": " Is a platform dedicated to fostering meaningful connections and friendships through engaging activities and events.",
+    "desc": "Is a platform dedicated to fostering meaningful connections and friendships through engaging activities and events.",
     "image": "will",
     "category": "basicweb",
+    "tech": "",
+    "featured": false,
     "links": {
-      "view": "404.html",
+      "view": "",
       "code": "https://github.com/Rohit-Dogra/will-you-be-my-buddy"
-    }
-  },
-  {
-    "name": "Indian Temples",
-    "desc": "It shows temples of different sectors of India. as user clicks it will redirect to wiki of that temple for info.",
-    "image": "tem",
-    "category": "basicweb",
-    "links": {
-      "view": "404.html",
-      "code": "#"
     }
   },
   {
@@ -186,8 +306,10 @@
     "desc": "Native android app built using Java, XML. Retrofit & Glide dependencies. Provides different category news.",
     "image": "rec",
     "category": "android",
+    "tech": "",
+    "featured": false,
     "links": {
-      "view": "404.html",
+      "view": "",
       "code": "https://github.com/Rohit-Dogra/Recipe-Wizard"
     }
   },
@@ -196,19 +318,11 @@
     "desc": "Web-based application designed to streamline the organization and administration of sports activities and events.",
     "image": "sports",
     "category": "android",
+    "tech": "",
+    "featured": false,
     "links": {
-      "view": "404.html",
+      "view": "",
       "code": "https://github.com/Rohit-Dogra/sports-management-system--App"
-    }
-  },
-  {
-    "name": "Pet-Care",
-    "desc": "The Pet Patch  is a dedicated platform designed to provide reliable and comprehensive pet care services",
-    "image": "pet",
-    "category": "android",
-    "links": {
-      "view": "404.html",
-      "code": "#"
     }
   }
 ]
